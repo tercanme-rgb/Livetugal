@@ -1,0 +1,30 @@
+<svg width="920" height="520" viewBox="0 0 920 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="920" height="520" rx="28" fill="#07111F"/>
+<path d="M90 411H832" stroke="#264267"/>
+<path d="M90 333H832" stroke="#193252"/>
+<path d="M90 255H832" stroke="#193252"/>
+<path d="M90 177H832" stroke="#193252"/>
+<path d="M90 99H832" stroke="#193252"/>
+<rect x="132" y="294" width="72" height="117" rx="16" fill="url(#b1)"/>
+<rect x="246" y="251" width="72" height="160" rx="16" fill="url(#b2)"/>
+<rect x="360" y="205" width="72" height="206" rx="16" fill="url(#b3)"/>
+<rect x="474" y="168" width="72" height="243" rx="16" fill="url(#b4)"/>
+<rect x="588" y="129" width="72" height="282" rx="16" fill="url(#b5)"/>
+<rect x="702" y="87" width="72" height="324" rx="16" fill="url(#b6)"/>
+<path d="M168 275C214 248 265 233 282 230C372 213 430 177 510 153C589 130 660 89 738 75" stroke="#EAF4FF" stroke-width="5" stroke-linecap="round"/>
+<circle cx="738" cy="75" r="8" fill="#EAF4FF"/>
+<text x="132" y="454" fill="#9AB2CF" font-family="Arial" font-size="16">Setup</text>
+<text x="246" y="454" fill="#9AB2CF" font-family="Arial" font-size="16">Docs</text>
+<text x="359" y="454" fill="#9AB2CF" font-family="Arial" font-size="16">Housing</text>
+<text x="474" y="454" fill="#9AB2CF" font-family="Arial" font-size="16">Banking</text>
+<text x="589" y="454" fill="#9AB2CF" font-family="Arial" font-size="16">Tax</text>
+<text x="697" y="454" fill="#9AB2CF" font-family="Arial" font-size="16">Landing</text>
+<defs>
+<linearGradient id="b1" x1="168" y1="294" x2="168" y2="411" gradientUnits="userSpaceOnUse"><stop stop-color="#1A2D47"/><stop offset="1" stop-color="#2FA9FF"/></linearGradient>
+<linearGradient id="b2" x1="282" y1="251" x2="282" y2="411" gradientUnits="userSpaceOnUse"><stop stop-color="#172B44"/><stop offset="1" stop-color="#35B8FF"/></linearGradient>
+<linearGradient id="b3" x1="396" y1="205" x2="396" y2="411" gradientUnits="userSpaceOnUse"><stop stop-color="#17314D"/><stop offset="1" stop-color="#53E0C1"/></linearGradient>
+<linearGradient id="b4" x1="510" y1="168" x2="510" y2="411" gradientUnits="userSpaceOnUse"><stop stop-color="#17314D"/><stop offset="1" stop-color="#7C6CFF"/></linearGradient>
+<linearGradient id="b5" x1="624" y1="129" x2="624" y2="411" gradientUnits="userSpaceOnUse"><stop stop-color="#21395F"/><stop offset="1" stop-color="#8C7CFF"/></linearGradient>
+<linearGradient id="b6" x1="738" y1="87" x2="738" y2="411" gradientUnits="userSpaceOnUse"><stop stop-color="#29446D"/><stop offset="1" stop-color="#B6ADFF"/></linearGradient>
+</defs>
+</svg>

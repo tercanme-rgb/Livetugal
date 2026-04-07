@@ -1,0 +1,21 @@
+<svg width="760" height="420" viewBox="0 0 760 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="760" height="420" rx="28" fill="#07111F"/>
+<rect x="84" y="88" width="112" height="244" rx="24" fill="#0E1C31" stroke="#213657"/>
+<rect x="224" y="88" width="112" height="244" rx="24" fill="#0E1C31" stroke="#213657"/>
+<rect x="364" y="88" width="112" height="244" rx="24" fill="#0E1C31" stroke="#213657"/>
+<rect x="504" y="88" width="112" height="244" rx="24" fill="#0E1C31" stroke="#213657"/>
+<rect x="112" y="161" width="56" height="143" rx="18" fill="url(#g1)"/>
+<rect x="252" y="127" width="56" height="177" rx="18" fill="url(#g2)"/>
+<rect x="392" y="109" width="56" height="195" rx="18" fill="url(#g3)"/>
+<rect x="532" y="146" width="56" height="158" rx="18" fill="url(#g4)"/>
+<text x="140" y="359" text-anchor="middle" fill="#EAF4FF" font-family="Arial" font-size="16">Visa</text>
+<text x="280" y="359" text-anchor="middle" fill="#EAF4FF" font-family="Arial" font-size="16">Rent</text>
+<text x="420" y="359" text-anchor="middle" fill="#EAF4FF" font-family="Arial" font-size="16">Tax</text>
+<text x="560" y="359" text-anchor="middle" fill="#EAF4FF" font-family="Arial" font-size="16">Bank</text>
+<defs>
+<linearGradient id="g1" x1="140" y1="161" x2="140" y2="304" gradientUnits="userSpaceOnUse"><stop stop-color="#53E0C1"/><stop offset="1" stop-color="#1E7E73"/></linearGradient>
+<linearGradient id="g2" x1="280" y1="127" x2="280" y2="304" gradientUnits="userSpaceOnUse"><stop stop-color="#2FA9FF"/><stop offset="1" stop-color="#16507D"/></linearGradient>
+<linearGradient id="g3" x1="420" y1="109" x2="420" y2="304" gradientUnits="userSpaceOnUse"><stop stop-color="#7C6CFF"/><stop offset="1" stop-color="#31286C"/></linearGradient>
+<linearGradient id="g4" x1="560" y1="146" x2="560" y2="304" gradientUnits="userSpaceOnUse"><stop stop-color="#FF8A65"/><stop offset="1" stop-color="#7D3217"/></linearGradient>
+</defs>
+</svg>
