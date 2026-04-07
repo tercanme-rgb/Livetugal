@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Livetugal – Your Complete Guide to Moving to Portugal</title>
+<meta name="description" content="Everything you need to move to Portugal: visa guides, renting, taxes, banking, transport and bureaucracy explained by expats who've done it." />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Livetugal – Moving to Portugal Made Simple" />
+<meta property="og:description" content="Your complete guide to visas, renting, taxes and life in Portugal." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourdomain.github.io/" />
+<link rel="canonical" href="https://yourdomain.github.io/" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Livetugal",
+  "url":"https://yourdomain.github.io/",
+  "description":"Complete guide to moving to Portugal — visas, renting, taxes, banking and more.",
+  "potentialAction":{"@type":"SearchAction","target":"https://yourdomain.github.io/search?q={search_term_string}","query-input":"required name=search_term_string"}
+}
+</script>
+
+<style>
+/* ───────────────── RESET & TOKENS ───────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+:root{
+  --terra:   #C0573D;
+  --terra-lt:#FAEDE9;
+  --azul:    #1B4F72;
+  --sand:    #F7F3EE;
+  --cream:   #FDFAF7;
+  --ink:     #1A1208;
+  --mid:     #6B5E4D;
+  --mute:    #9A8F80;
+  --border:  #E8E2D9;
+  --white:   #FFFFFF;
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:16px;
+  --radius-xl:22px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:0 4px 16px rgba(0,0,0,.09),0 2px 6px rgba(0,0,0,.06);
+  --shadow-lg:0 12px 36px rgba(0,0,0,.13),0 4px 12px rgba(0,0,0,.07);
+  --font-head:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --max-w:1160px;
+  --pad-x:clamp(16px,4vw,40px);
+}
+
+body{
+  font-family:var(--font-body);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:16px;
+}
+
+/* ───────────────── LAYOUT HELPERS ───────────────── */
+.container{max-width:var(--max-w);margin-inline:auto;padding-inline:var(--pad-x)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+
+/* ───────────────── TYPOGRAPHY ───────────────── */
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+h1{font-size:clamp(36px,6vw,58px);font-weight:600}
+h2{font-size:clamp(26px,4vw,38px);font-weight:600}
+h3{font-size:clamp(17px,2.5vw,22px);font-weight:600}
+h4{font-size:15px;font-weight:600;font-family:var(--font-body)}
+p{color:var(--mid)}
+
+/* ───────────────── BUTTONS ───────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:50px;font-size:14px;font-weight:600;
+  font-family:var(--font-body);cursor:pointer;border:none;
+  transition:all .15s ease;text-decoration:none;
+}
+.btn-primary{background:var(--terra);color:#fff}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.25)}
+.btn-outline{background:var(--white);color:var(--ink);border:1.5px solid var(--border)}
+.btn-outline:hover{background:var(--sand)}
+
+/* ───────────────── HEADER ───────────────── */
+#site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(253,250,247,.96);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  display:flex;align-items:center;gap:24px;
+  height:62px;
+}
+.logo{display:flex;align-items:center;gap:8px;flex-shrink:0;text-decoration:none}
+.logo-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:var(--terra);display:flex;align-items:center;justify-content:center;
+}
+.logo-icon svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.5}
+.logo-text{font-family:var(--font-head);font-size:22px;font-weight:600;color:var(--ink)}
+.logo-text span{color:var(--terra)}
+
+nav.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+nav.main-nav a{
+  padding:7px 13px;border-radius:var(--radius-sm);
+  font-size:14px;font-weight:500;color:var(--mid);
+  transition:background .15s,color .15s;
+  display:flex;align-items:center;gap:6px;
+}
+nav.main-nav a:hover{background:var(--sand);color:var(--ink)}
+nav.main-nav svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.search-wrap{position:relative;flex-shrink:0}
+.search-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--mute);fill:none;stroke-width:2;stroke-linecap:round;pointer-events:none}
+.search-input{
+  height:36px;width:200px;padding-left:34px;padding-right:12px;
+  border:1px solid var(--border);border-radius:50px;
+  background:var(--sand);color:var(--ink);font-size:13px;
+  font-family:var(--font-body);outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+.search-input:focus{border-color:var(--terra);box-shadow:0 0 0 3px rgba(192,87,61,.12)}
+.search-input::placeholder{color:var(--mute)}
+
+.ham-btn{display:none;background:none;border:none;cursor:pointer;padding:6px;border-radius:var(--radius-sm)}
+.ham-btn svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round}
+
+#mobile-nav{
+  display:none;border-top:1px solid var(--border);
+  background:var(--white);padding:12px 16px;
+}
+#mobile-nav.open{display:block}
+#mobile-nav a{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;
+  border-radius:var(--radius-sm);color:var(--mid);font-size:14px;font-weight:500;
+  transition:background .12s;
+}
+#mobile-nav a:hover{background:var(--sand);color:var(--ink)}
+#mobile-nav svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ───────────────── HERO ───────────────── */
+#hero{
+  position:relative;overflow:hidden;
+  min-height:520px;display:flex;align-items:center;
+}
+#hero-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  /* Fallback gradient if image is slow */
+}
+#hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(15,30,45,.85) 0%,rgba(15,30,45,.45) 50%,rgba(15,30,45,.15) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:96px var(--pad-x) 80px;
+  max-width:var(--max-w);margin-inline:auto;width:100%;
+}
+.hero-inner h1{color:#fff;max-width:680px;margin-bottom:18px}
+.hero-inner p{color:rgba(255,255,255,.85);font-size:18px;max-width:560px;margin-bottom:36px;line-height:1.65}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ───────────────── STATS BAR ───────────────── */
+.stats-bar{background:var(--white);border-bottom:1px solid var(--border)}
+.stats-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  divide-color:var(--border);
+}
+.stat-item{
+  padding:18px 12px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none}
+.stat-value{font-family:var(--font-head);font-size:22px;font-weight:600;color:var(--ink)}
+.stat-label{font-size:12px;color:var(--mute);margin-top:2px}
+
+/* ───────────────── AD SLOTS ───────────────── */
+.ad-slot{
+  background:rgba(247,243,238,.7);
+  border:1.5px dashed #D4CCBF;
+  border-radius:var(--radius-md);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;text-align:center;padding:16px;
+}
+.ad-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.ad-sub{font-size:11px;color:#B5ADA0}
+
+/* ───────────────── SECTION HEADERS ───────────────── */
+.section-head{text-align:center;margin-bottom:48px}
+.section-head h2{margin-bottom:10px}
+.section-head p{max-width:520px;margin-inline:auto}
+.section-label{
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--terra);margin-bottom:10px;display:block;
+}
+
+/* ───────────────── TOPIC CARDS ───────────────── */
+.topic-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:var(--shadow-sm);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.topic-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card-img-wrap{position:relative;height:196px;overflow:hidden;flex-shrink:0}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.topic-card:hover .card-img-wrap img{transform:scale(1.05)}
+.card-badge{
+  position:absolute;top:12px;left:12px;
+  display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
+  padding:4px 10px;border-radius:50px;
+  font-size:12px;font-weight:600;color:var(--ink);
+}
+.card-badge svg{width:13px;height:13px;stroke:var(--terra);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.card-body h2{font-size:19px;margin-bottom:10px;transition:color .15s}
+.topic-card:hover .card-body h2{color:var(--terra)}
+.card-body p{font-size:14px;line-height:1.65;flex:1}
+.card-footer{
+  margin-top:18px;display:flex;align-items:center;justify-content:space-between;
+}
+.read-link{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:13px;font-weight:600;color:var(--terra);
+  transition:gap .15s;
+}
+.read-link:hover{gap:8px}
+.read-link svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.read-time{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:4px}
+.read-time svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ───────────────── CALCULATOR SECTION ───────────────── */
+.calc-section{background:var(--sand)}
+.calc-grid{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start}
+.calc-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.calc-header{
+  background:linear-gradient(135deg,var(--azul) 0%,#2E86C1 100%);
+  padding:28px 32px;
+}
+.calc-header h3{font-size:28px;color:#fff;margin-bottom:6px}
+.calc-header p{font-size:14px;color:rgba(255,255,255,.75)}
+.calc-body{padding:32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px}
+label.field-label{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
+select.field-select{
+  width:100%;height:42px;padding:0 12px;
+  border:1.5px solid var(--border);border-radius:var(--radius-md);
+  background:var(--cream);color:var(--ink);font-size:14px;
+  font-family:var(--font-body);cursor:pointer;outline:none;
+  transition:border-color .15s;appearance:auto;
+}
+select.field-select:focus{border-color:var(--terra)}
+.calc-result{
+  background:var(--sand);border-radius:var(--radius-lg);
+  padding:28px 32px;display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;
+}
+.result-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.result-amount{font-family:var(--font-head);font-size:48px;font-weight:600;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.result-amount span{font-family:var(--font-body);font-size:18px;font-weight:400;color:var(--mute)}
+.result-per{font-size:13px;color:var(--mute);margin-top:6px}
+.breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.breakdown-item{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:12px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.breakdown-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.breakdown-name{font-size:13px;color:var(--mid);display:flex;align-items:center;gap:8px}
+.breakdown-val{font-size:14px;font-weight:600;color:var(--ink)}
+.calc-note{font-size:12px;color:#B5ADA0;margin-top:16px;line-height:1.5}
+.calc-note a{color:var(--terra);text-decoration:underline}
+
+/* Sidebar ad */
+.sidebar-sticky{position:sticky;top:80px}
+
+/* ───────────────── COMMUNITY ───────────────── */
+.community-section{background:var(--white)}
+.community-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.community-card{
+  background:var(--cream);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:20px;
+  box-shadow:var(--shadow-sm);transition:box-shadow .2s;
+}
+.community-card:hover{box-shadow:var(--shadow-md)}
+.community-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.avatar{
+  width:42px;height:42px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:16px;background:rgba(192,87,61,.1);color:var(--terra);
+}
+.author-name{font-size:14px;font-weight:600;color:var(--ink)}
+.author-meta{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:4px;margin-top:2px}
+.author-meta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.community-text{font-size:14px;line-height:1.65;color:var(--mid)}
+.community-cta{text-align:center;margin-top:36px}
+
+/* ───────────────── NEWSLETTER ───────────────── */
+.newsletter-card{
+  background:linear-gradient(135deg,var(--azul) 0%,#6B2A52 100%);
+  border-radius:var(--radius-xl);padding:44px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;
+}
+.newsletter-card h3{font-size:28px;color:#fff;margin-bottom:8px}
+.newsletter-card p{font-size:14px;color:rgba(255,255,255,.78);line-height:1.6;max-width:360px}
+.newsletter-form{display:flex;gap:10px;flex-wrap:wrap}
+.nl-input{
+  padding:12px 18px;border-radius:var(--radius-md);border:none;
+  background:rgba(255,255,255,.16);color:#fff;font-size:14px;
+  font-family:var(--font-body);outline:none;width:230px;
+}
+.nl-input::placeholder{color:rgba(255,255,255,.55)}
+.nl-btn{
+  padding:12px 22px;background:var(--terra);color:#fff;border:none;
+  border-radius:var(--radius-md);font-size:14px;font-weight:600;
+  font-family:var(--font-body);cursor:pointer;transition:filter .15s;
+}
+.nl-btn:hover{filter:brightness(1.1)}
+
+/* ───────────────── FOOTER ───────────────── */
+site-footer,#site-footer{background:#0E1E2B}
+.footer-inner{padding:52px 0 28px}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:40px;
+}
+.footer-logo-text{font-family:var(--font-head);font-size:22px;font-weight:600;color:#fff}
+.footer-logo-text span{color:var(--terra)}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:12px;max-width:260px}
+.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul a{font-size:13px;color:rgba(255,255,255,.55);transition:color .15s}
+.footer-col ul a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+}
+.footer-bottom span{font-size:12px;color:rgba(255,255,255,.28)}
+.footer-bottom a{color:rgba(255,255,255,.38);text-decoration:underline;font-size:12px}
+.footer-bottom a:hover{color:rgba(255,255,255,.65)}
+
+/* ───────────────── RESPONSIVE ───────────────── */
+@media(max-width:900px){
+  .calc-grid{grid-template-columns:1fr}
+  .sidebar-sticky{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  nav.main-nav{display:none}
+  .search-wrap{display:none}
+  .ham-btn{display:flex}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero-inner{padding:72px var(--pad-x) 60px}
+  .newsletter-card{padding:32px 28px}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .calc-body{padding:24px 20px}
+  .form-row{grid-template-columns:1fr 1fr}
+}
+
+/* ───────────────── UTILITIES ───────────────── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.text-center{text-align:center}
+.mt-4{margin-top:16px}
+.mt-6{margin-top:24px}
+.mt-8{margin-top:32px}
+.mt-10{margin-top:40px}
+.mb-6{margin-bottom:24px}
+.py-12{padding-block:48px}
+.py-16{padding-block:64px}
+.py-5{padding-block:20px}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     STICKY HEADER
+═══════════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="/" class="logo" aria-label="Livetugal – Home">
+        <div class="logo-icon">
+          <!-- Map pin SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span class="logo-text">Live<span>tugal</span></span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#visa">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          Visa
+        </a>
+        <a href="#rent">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          Rent
+        </a>
+        <a href="#tax">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Tax
+        </a>
+        <a href="#banking">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12,2 20,7 4,7"/></svg>
+          Banking
+        </a>
+        <a href="#transport">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Transport
+        </a>
+        <a href="#paperwork">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Paperwork
+        </a>
+      </nav>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" class="search-input" placeholder="Search topics…" aria-label="Search guides" />
+      </div>
+
+      <!-- Hamburger -->
+      <button class="ham-btn" id="ham-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg id="ham-icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#visa">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+      Visa
+    </a>
+    <a href="#rent">
+      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      Rent
+    </a>
+    <a href="#tax">
+      <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Tax
+    </a>
+    <a href="#banking">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12,2 20,7 4,7"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/></svg>
+      Banking
+    </a>
+    <a href="#transport">
+      <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Transport
+    </a>
+    <a href="#paperwork">
+      <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      Paperwork
+    </a>
+  </nav>
+</header>
+
+
+<main id="main-content">
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <img
+      id="hero-img"
+      src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1920&q=80&auto=format"
+      alt="Aerial view of Lisbon's terracotta rooftops and the Tagus river at golden hour"
+      fetchpriority="high"
+      decoding="sync"
+    />
+    <div id="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 id="hero-heading">Your Complete Guide<br>to Moving to Portugal</h1>
+      <p>From visa applications and renting a flat to taxes, banking and daily life — everything you need to start fresh in Portugal, all in one place.</p>
+      <div class="hero-btns">
+        <a href="#topics" class="btn btn-primary">
+          Explore Guides
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </a>
+        <a href="#calculator" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+          Cost of Living Calculator
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TRUST STATS BAR
+  ═══════════════════════════════════════════════ -->
+  <div class="stats-bar" aria-label="Site statistics">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <div class="stat-value">50K+</div>
+          <div class="stat-label">Monthly Readers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">200+</div>
+          <div class="stat-label">In-depth Guides</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">4.9★</div>
+          <div class="stat-label">Community Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">2019</div>
+          <div class="stat-label">Trusted Since</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       ADSLOT ALPHA — Leaderboard 728×90
+       Highest CTR zone: immediately below the hero fold.
+       Replace inner content with your AdSense <ins> tag.
+  ═══════════════════════════════════════════════ -->
+  <div class="container py-5">
+    <div class="ad-slot" style="min-height:90px" id="adslot-alpha" aria-label="Advertisement" data-ad-slot="adslot-alpha" data-ad-format="auto" data-full-width-responsive="true">
+      <!-- ▼ REPLACE WITH AdSense <ins> TAG ▼ -->
+      <span class="ad-label">Advertisement</span>
+      <span class="ad-sub">📢 AdSlot Alpha — Leaderboard (728×90 / Responsive) — High CTR Zone</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       TOPIC GRID
+  ═══════════════════════════════════════════════ -->
+  <section id="topics" class="py-16" aria-labelledby="topics-heading">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-label">Expat Guides</span>
+        <h2 id="topics-heading">Moving to Portugal — Complete Guides</h2>
+        <p>Step-by-step resources on every topic you'll need, written by expats who have been through it.</p>
+      </header>
+
+      <!-- Row 1 -->
+      <div class="grid-3" role="list">
+
+        <!-- RENT -->
+        <article id="rent" class="topic-card" role="listitem" itemscope itemtype="https://schema.org/Article">
+          <a href="/guides/renting-in-portugal" aria-label="Read: Finding a Rental Home in Portugal" tabindex="-1">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=75&auto=format"
+                   alt="Bright Lisbon apartment interior with terracotta tiles"
+                   loading="lazy" decoding="async" width="600" height="400" itemprop="image" />
+              <span class="card-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+                Rent
+              </span>
+            </div>
+          </a>
+          <div class="card-body">
+            <h2 itemprop="headline"><a href="/guides/renting-in-portugal">Finding a Rental Home in Portugal</a></h2>
+            <p itemprop="description">A complete guide to renting in Lisbon, Porto and the Algarve — neighbourhoods, price ranges and tenant rights explained.</p>
+            <footer class="card-footer">
+              <a href="/guides/renting-in-portugal" class="read-link" aria-label="Read more about renting in Portugal">
+                Read More
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+              </a>
+              <span class="read-time">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                <span itemprop="timeRequired">9 min read</span>
+              </span>
+            </footer>
+          </div>
+        </article>
+
+        <!-- TAX -->
+        <article id="tax" class="topic-card" role="listitem" itemscope itemtype="https://schema.org/Article">
+          <a href="/guides/portugal-tax-system" aria-label="Read: Portugal Tax System Guide" tabindex="-1">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=75&auto=format"
+                   alt="Tax documents, calculator and coins on a desk"
+                   loading="lazy" decoding="async" width="600" height="400" itemprop="image" />
+              <span class="card-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                Tax
+              </span>
+            </div>
+          </a>
+          <div class="card-body">
+            <h2 itemprop="headline"><a href="/guides/portugal-tax-system">Portugal Tax System Guide</a></h2>
+            <p itemprop="description">NHR status, income-tax rates, IRS filing and the tax advantages that make Portugal attractive for expats and remote workers.</p>
+            <footer class="card-footer">
+              <a href="/guides/portugal-tax-system" class="read-link">Read More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+              <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span itemprop="timeRequired">11 min read</span></span>
+            </footer>
+          </div>
+        </article>
+
+        <!-- VISA -->
+        <article id="visa" class="topic-card" role="listitem" itemscope itemtype="https://schema.org/Article">
+          <a href="/guides/portugal-visa-residency" aria-label="Read: Visa & Residency Permits" tabindex="-1">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=75&auto=format"
+                   alt="Portuguese passport and visa documents"
+                   loading="lazy" decoding="async" width="600" height="400" itemprop="image" />
+              <span class="card-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                Visa
+              </span>
+            </div>
+          </a>
+          <div class="card-body">
+            <h2 itemprop="headline"><a href="/guides/portugal-visa-residency">Visa &amp; Residency Permits</a></h2>
+            <p itemprop="description">D7 Passive Income Visa, D8 Digital Nomad Visa, Golden Visa and family reunification — every path to legal residency covered.</p>
+            <footer class="card-footer">
+              <a href="/guides/portugal-visa-residency" class="read-link">Read More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+              <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span itemprop="timeRequired">14 min read</span></span>
+            </footer>
+          </div>
+        </article>
+      </div>
+
+      <!-- ═══ IN-CONTENT AD (between card rows) ═══
+           Native / In-Feed format → 2–3× CTR vs sidebar.
+           CPM tier: HIGH — engaged, topic-aware audience.
+      -->
+      <div style="margin:28px 0">
+        <div class="ad-slot" style="min-height:100px" id="adslot-infeed" aria-label="Advertisement" data-ad-slot="adslot-infeed" data-ad-format="fluid" data-layout="in-article">
+          <!-- ▼ REPLACE WITH AdSense <ins> TAG ▼ -->
+          <span class="ad-label">Advertisement</span>
+          <span class="ad-sub">📢 AdSlot In-Feed — Native / In-Article (Responsive) — High Engagement Zone</span>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="grid-3" role="list">
+
+        <!-- BANKING -->
+        <article id="banking" class="topic-card" role="listitem" itemscope itemtype="https://schema.org/Article">
+          <a href="/guides/banking-in-portugal" tabindex="-1">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=75&auto=format"
+                   alt="Credit cards and banking documents for Portugal"
+                   loading="lazy" decoding="async" width="600" height="400" itemprop="image" />
+              <span class="card-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12,2 20,7 4,7"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/></svg>
+                Banking
+              </span>
+            </div>
+          </a>
+          <div class="card-body">
+            <h2 itemprop="headline"><a href="/guides/banking-in-portugal">Opening a Bank Account in Portugal</a></h2>
+            <p itemprop="description">Step-by-step process for residents and non-residents, required documents and the best banks for English-speaking expats.</p>
+            <footer class="card-footer">
+              <a href="/guides/banking-in-portugal" class="read-link">Read More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+              <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span itemprop="timeRequired">7 min read</span></span>
+            </footer>
+          </div>
+        </article>
+
+        <!-- TRANSPORT -->
+        <article id="transport" class="topic-card" role="listitem" itemscope itemtype="https://schema.org/Article">
+          <a href="/guides/transport-in-portugal" tabindex="-1">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1585318909028-cd44f3b55f04?w=600&q=75&auto=format"
+                   alt="Yellow tram on a Lisbon street"
+                   loading="lazy" decoding="async" width="600" height="400" itemprop="image" />
+              <span class="card-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Transport
+              </span>
+            </div>
+          </a>
+          <div class="card-body">
+            <h2 itemprop="headline"><a href="/guides/transport-in-portugal">Transport &amp; Public Transit</a></h2>
+            <p itemprop="description">Metro, tram, buses and trains explained. Navegante card pricing, inter-city rail and how to get your Portuguese driving licence.</p>
+            <footer class="card-footer">
+              <a href="/guides/transport-in-portugal" class="read-link">Read More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+              <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span itemprop="timeRequired">8 min read</span></span>
+            </footer>
+          </div>
+        </article>
+
+        <!-- PAPERWORK -->
+        <article id="paperwork" class="topic-card" role="listitem" itemscope itemtype="https://schema.org/Article">
+          <a href="/guides/portugal-bureaucracy" tabindex="-1">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=75&auto=format"
+                   alt="Official documents and a Portuguese flag on a desk"
+                   loading="lazy" decoding="async" width="600" height="400" itemprop="image" />
+              <span class="card-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                Paperwork
+              </span>
+            </div>
+          </a>
+          <div class="card-body">
+            <h2 itemprop="headline"><a href="/guides/portugal-bureaucracy">Official Paperwork &amp; Bureaucracy</a></h2>
+            <p itemprop="description">NIF number, AIMA (former SEF) appointment, health insurance and Social Security registration — all in one place.</p>
+            <footer class="card-footer">
+              <a href="/guides/portugal-bureaucracy" class="read-link">Read More <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
+              <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><span itemprop="timeRequired">10 min read</span></span>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CALCULATOR + ADSLOT BETA
+       AdSlot Beta (300×600 Half Page) = highest global CPM.
+       Placed beside high-intent interactive content.
+  ═══════════════════════════════════════════════ -->
+  <section class="calc-section py-16" aria-labelledby="calc-heading">
+    <div class="container">
+      <div class="calc-grid">
+
+        <!-- Calculator -->
+        <div id="calculator" class="calc-card">
+          <div class="calc-header">
+            <h3 id="calc-heading">Cost of Living Calculator</h3>
+            <p>Estimate your monthly expenses in Portugal by city and household size.</p>
+          </div>
+          <div class="calc-body">
+            <div class="form-row">
+              <div>
+                <label class="field-label" for="city-select">City</label>
+                <select class="field-select" id="city-select" aria-label="Select city">
+                  <option value="Lisbon">Lisbon</option>
+                  <option value="Porto">Porto</option>
+                  <option value="Algarve">Algarve</option>
+                  <option value="Braga">Braga</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="people-select">People</label>
+                <select class="field-select" id="people-select" aria-label="Select number of people">
+                  <option value="1">1 Person</option>
+                  <option value="2">2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="type-select">Home Type</label>
+                <select class="field-select" id="type-select" aria-label="Select home type">
+                  <option value="studio">Studio</option>
+                  <option value="one">1 Bedroom</option>
+                  <option value="two">2 Bedrooms</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-result">
+              <div>
+                <div class="result-label" id="result-city-label">Lisbon · 1 Person</div>
+                <div class="result-amount" aria-live="polite" aria-atomic="true">
+                  €<span id="result-total">1,450</span><span>/mo</span>
+                </div>
+                <div class="result-per">Per person: €<span id="result-per">1,450</span></div>
+              </div>
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#4A6741" stroke-width="1.5" stroke-linecap="round" opacity=".35" aria-hidden="true"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+            </div>
+
+            <div class="breakdown-grid">
+              <div class="breakdown-item">
+                <span class="breakdown-name"><span class="breakdown-dot" style="background:#1B4F72"></span>Rent</span>
+                <span class="breakdown-val">€<span id="bd-rent">900</span></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-name"><span class="breakdown-dot" style="background:#C0573D"></span>Groceries</span>
+                <span class="breakdown-val">€<span id="bd-food">300</span></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-name"><span class="breakdown-dot" style="background:#4A6741"></span>Transport</span>
+                <span class="breakdown-val">€<span id="bd-transport">70</span></span>
+              </div>
+              <div class="breakdown-item">
+                <span class="breakdown-name"><span class="breakdown-dot" style="background:#8B3A6A"></span>Utilities</span>
+                <span class="breakdown-val">€<span id="bd-other">180</span></span>
+              </div>
+            </div>
+
+            <p class="calc-note">
+              * Estimates based on Q4 2024 data. Actual costs vary by lifestyle.
+              <a href="/guides/portugal-cost-of-living">Full cost of living guide →</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ADSLOT BETA — 300×600 Half Page -->
+        <aside aria-label="Sponsored content" class="sidebar-sticky">
+          <div class="ad-slot" style="min-height:600px;margin-bottom:16px" id="adslot-beta" aria-label="Advertisement" data-ad-slot="adslot-beta" data-ad-format="auto">
+            <!-- ▼ REPLACE WITH AdSense <ins> TAG ▼ -->
+            <span class="ad-label">Advertisement</span>
+            <span class="ad-sub">📢 AdSlot Beta — Half Page (300×600)<br>Highest CPM Format · Sidebar</span>
+          </div>
+          <!-- Internal link widget for dwell time -->
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px">
+            <h4 style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:14px">Popular Guides</h4>
+            <a href="/guides/renting-in-portugal" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;font-weight:500;color:var(--ink)">Renting Guide <span style="color:var(--mute)">›</span></a>
+            <a href="/guides/portugal-visa-residency" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;font-weight:500;color:var(--ink)">Visa Guide <span style="color:var(--mute)">›</span></a>
+            <a href="/guides/portugal-tax-system" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;font-weight:500;color:var(--ink)">Tax Guide <span style="color:var(--mute)">›</span></a>
+            <a href="/guides/banking-in-portugal" style="display:flex;justify-content:space-between;padding:9px 0;font-size:13px;font-weight:500;color:var(--ink)">Banking Guide <span style="color:var(--mute)">›</span></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       COMMUNITY / LATEST POSTS
+       UGC = freshness signal for Google.
+       Schema: ItemList + Review markup.
+  ═══════════════════════════════════════════════ -->
+  <section class="community-section py-16" aria-labelledby="community-heading">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-label">Community</span>
+        <h2 id="community-heading">What New Arrivals Are Saying</h2>
+        <p>Real experiences from our community of expats who have already made the move to Portugal.</p>
+      </header>
+
+      <div class="community-grid" itemscope itemtype="https://schema.org/ItemList">
+        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+          <div class="community-meta">
+            <div class="avatar">M</div>
+            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <div class="author-name" itemprop="name">Michael A.</div>
+              <div class="author-meta">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                <time>2 hours ago</time>&nbsp;· Lisbon
+              </div>
+            </address>
+          </div>
+          <p class="community-text" itemprop="reviewBody">Got my NIF number in Lisbon today! The process was much simpler than I expected — took just one afternoon.</p>
+        </article>
+
+        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+          <div class="community-meta">
+            <div class="avatar">E</div>
+            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <div class="author-name" itemprop="name">Elif K.</div>
+              <div class="author-meta">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                <time>5 hours ago</time>&nbsp;· Porto
+              </div>
+            </address>
+          </div>
+          <p class="community-text" itemprop="reviewBody">Found a beautiful flat in Porto, just a 5-minute walk from Bolhão metro. The rent negotiation guide here saved me €200/month.</p>
+        </article>
+
+        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+          <div class="community-meta">
+            <div class="avatar">J</div>
+            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <div class="author-name" itemprop="name">James D.</div>
+              <div class="author-meta">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                <time>1 day ago</time>&nbsp;· Lisbon
+              </div>
+            </address>
+          </div>
+          <p class="community-text" itemprop="reviewBody">My D7 visa was finally approved! Took 3 months but absolutely worth the wait. The visa guide here was spot-on.</p>
+        </article>
+
+        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+          <div class="community-meta">
+            <div class="avatar">Z</div>
+            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <div class="author-name" itemprop="name">Zeynep T.</div>
+              <div class="author-meta">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                <time>2 days ago</time>&nbsp;· Porto
+              </div>
+            </address>
+          </div>
+          <p class="community-text" itemprop="reviewBody">Opened an account at ActivoBank — English-speaking staff made it completely effortless. Highly recommend for expats.</p>
+        </article>
+      </div>
+
+      <div class="community-cta mt-8">
+        <a href="/community" class="btn btn-outline">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Join the Community
+        </a>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="newsletter-card mt-10">
+        <div>
+          <h3>Weekly Portugal Newsletter</h3>
+          <p>Every Tuesday — visa updates, rental trends and community stories. Join 12,000+ readers.</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" class="nl-input" placeholder="your@email.com" aria-label="Email address" />
+          <button type="button" class="nl-btn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       ADSLOT GAMMA — Bottom Leaderboard 728×90
+       Post-content audience = highest purchase intent.
+  ═══════════════════════════════════════════════ -->
+  <div class="container py-5">
+    <div class="ad-slot" style="min-height:90px" id="adslot-gamma" aria-label="Advertisement" data-ad-slot="adslot-gamma" data-ad-format="auto" data-full-width-responsive="true">
+      <!-- ▼ REPLACE WITH AdSense <ins> TAG ▼ -->
+      <span class="ad-label">Advertisement</span>
+      <span class="ad-sub">📢 AdSlot Gamma — Bottom Leaderboard (728×90 / Responsive) — High Intent Zone</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer id="site-footer" itemscope itemtype="https://schema.org/Organization">
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="/" itemprop="url">
+          <span class="footer-logo-text">Live<span>tugal</span></span>
+        </a>
+        <p class="footer-desc" itemprop="description">The trusted guide and community platform for people moving to Portugal — since 2019.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="/guides/portugal-visa-residency">Visa Guide</a></li>
+          <li><a href="/guides/renting-in-portugal">Rent Guide</a></li>
+          <li><a href="/guides/portugal-tax-system">Tax Guide</a></li>
+          <li><a href="/guides/banking-in-portugal">Banking Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="#calculator">Cost of Living Calculator</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/cookies">Cookie Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Livetugal.com — All rights reserved.</span>
+      <span><a href="/cookies">Cookie Settings</a> · Made with ♥ in Lisbon</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+/* ── Dynamic year ── */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ── Mobile menu toggle ── */
+const hamBtn  = document.getElementById('ham-btn');
+const mobileNav = document.getElementById('mobile-nav');
+hamBtn.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  hamBtn.setAttribute('aria-expanded', open);
+});
+/* Close mobile nav when a link is clicked */
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamBtn.setAttribute('aria-expanded', 'false');
+  });
+});
+
+/* ── Cost of Living Calculator ── */
+const COSTS = {
+  Lisbon:  { studio:{rent:900,food:400,transport:80,other:120},  one:{rent:1200,food:400,transport:80,other:120},  two:{rent:1700,food:400,transport:80,other:120}  },
+  Porto:   { studio:{rent:700,food:350,transport:70,other:100},  one:{rent:950,food:350,transport:70,other:100},   two:{rent:1350,food:350,transport:70,other:100}  },
+  Algarve: { studio:{rent:800,food:370,transport:90,other:130},  one:{rent:1100,food:370,transport:90,other:130},  two:{rent:1500,food:370,transport:90,other:130}  },
+  Braga:   { studio:{rent:550,food:290,transport:60,other:90},   one:{rent:750,food:290,transport:60,other:90},    two:{rent:1050,food:290,transport:60,other:90}   },
+};
+
+const citySelect   = document.getElementById('city-select');
+const peopleSelect = document.getElementById('people-select');
+const typeSelect   = document.getElementById('type-select');
+
+function updateCalc() {
+  const city    = citySelect.value;
+  const people  = parseInt(peopleSelect.value, 10);
+  const type    = typeSelect.value;
+  const d       = COSTS[city][type];
+
+  const rent      = d.rent;
+  const food      = d.food * people;
+  const transport = d.transport * people;
+  const other     = d.other;
+  const total     = rent + food + transport + other;
+
+  const fmt = (n) => n.toLocaleString('en-GB');
+
+  document.getElementById('result-city-label').textContent = `${city} · ${people} ${people === 1 ? 'Person' : 'People'}`;
+  document.getElementById('result-total').textContent      = fmt(total);
+  document.getElementById('result-per').textContent        = fmt(Math.round(total / people));
+  document.getElementById('bd-rent').textContent           = fmt(rent);
+  document.getElementById('bd-food').textContent           = fmt(food);
+  document.getElementById('bd-transport').textContent      = fmt(transport);
+  document.getElementById('bd-other').textContent          = fmt(other);
+}
+
+citySelect.addEventListener('change',   updateCalc);
+peopleSelect.addEventListener('change', updateCalc);
+typeSelect.addEventListener('change',   updateCalc);
+updateCalc(); /* init */
+
+/* ── Newsletter dummy submit ── */
+document.querySelector('.nl-btn').addEventListener('click', function() {
+  const inp = document.querySelector('.nl-input');
+  if (inp.value && inp.value.includes('@')) {
+    inp.value = '';
+    this.textContent = 'Subscribed ✓';
+    this.style.background = '#4A6741';
+    setTimeout(() => { this.textContent = 'Subscribe'; this.style.background = ''; }, 3000);
+  } else {
+    inp.style.outline = '2px solid #C0573D';
+    setTimeout(() => inp.style.outline = '', 2000);
+  }
+});
+</script>
+
+</body>
+</html>
