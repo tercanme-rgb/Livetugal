@@ -256,7 +256,7 @@ nav.main-nav svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-wid
 .calc-header h3{font-size:28px;color:#fff;margin-bottom:6px}
 .calc-header p{font-size:14px;color:rgba(255,255,255,.75)}
 .calc-body{padding:32px}
-.form-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:28px}
 label.field-label{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mid);margin-bottom:8px}
 select.field-select{
   width:100%;height:42px;padding:0 12px;
@@ -740,7 +740,7 @@ site-footer,#site-footer{background:#0E1E2B}
         <div id="calculator" class="calc-card">
           <div class="calc-header">
             <h3 id="calc-heading">Cost of Living Calculator</h3>
-            <p>Estimate your monthly expenses in Portugal by city and household size.</p>
+            <p>Estimate monthly living costs across Portugal by city, adults, children and home type.</p>
           </div>
           <div class="calc-body">
             <div class="form-row">
@@ -749,36 +749,74 @@ site-footer,#site-footer{background:#0E1E2B}
                 <select class="field-select" id="city-select" aria-label="Select city">
                   <option value="Lisbon">Lisbon</option>
                   <option value="Porto">Porto</option>
-                  <option value="Algarve">Algarve</option>
                   <option value="Braga">Braga</option>
+                  <option value="Coimbra">Coimbra</option>
+                  <option value="Aveiro">Aveiro</option>
+                  <option value="Faro">Faro</option>
+                  <option value="Setubal">Setubal</option>
+                  <option value="Cascais">Cascais</option>
+                  <option value="Sintra">Sintra</option>
+                  <option value="Funchal">Funchal</option>
+                  <option value="Ponta Delgada">Ponta Delgada</option>
+                  <option value="Leiria">Leiria</option>
+                  <option value="Viseu">Viseu</option>
+                  <option value="Viana do Castelo">Viana do Castelo</option>
+                  <option value="Evora">Evora</option>
+                  <option value="Santarem">Santarem</option>
+                  <option value="Castelo Branco">Castelo Branco</option>
+                  <option value="Guarda">Guarda</option>
+                  <option value="Beja">Beja</option>
+                  <option value="Braganca">Braganca</option>
+                  <option value="Vila Real">Vila Real</option>
+                  <option value="Portimao">Portimao</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Matosinhos">Matosinhos</option>
+                  <option value="Guimaraes">Guimaraes</option>
                 </select>
               </div>
               <div>
-                <label class="field-label" for="people-select">People</label>
-                <select class="field-select" id="people-select" aria-label="Select number of people">
-                  <option value="1">1 Person</option>
-                  <option value="2">2 People</option>
-                  <option value="3">3 People</option>
-                  <option value="4">4 People</option>
+                <label class="field-label" for="adults-select">Adults</label>
+                <select class="field-select" id="adults-select" aria-label="Select number of adults">
+                  <option value="1">1 Adult</option>
+                  <option value="2">2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                  <option value="5">5 Adults</option>
+                  <option value="6">6 Adults</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label" for="kids-select">Kids</label>
+                <select class="field-select" id="kids-select" aria-label="Select number of children">
+                  <option value="0">0 Kids</option>
+                  <option value="1">1 Kid</option>
+                  <option value="2">2 Kids</option>
+                  <option value="3">3 Kids</option>
+                  <option value="4">4 Kids</option>
+                  <option value="5">5 Kids</option>
+                  <option value="6">6 Kids</option>
                 </select>
               </div>
               <div>
                 <label class="field-label" for="type-select">Home Type</label>
                 <select class="field-select" id="type-select" aria-label="Select home type">
-                  <option value="studio">Studio</option>
-                  <option value="one">1 Bedroom</option>
-                  <option value="two">2 Bedrooms</option>
+                  <option value="T0">T0</option>
+                  <option value="T1" selected>T1</option>
+                  <option value="T2">T2</option>
+                  <option value="T3">T3</option>
+                  <option value="T4">T4</option>
+                  <option value="T5">T5</option>
                 </select>
               </div>
             </div>
 
             <div class="calc-result">
               <div>
-                <div class="result-label" id="result-city-label">Lisbon · 1 Person</div>
+                <div class="result-label" id="result-city-label">Lisbon · 1 Adult · 0 Kids · T1</div>
                 <div class="result-amount" aria-live="polite" aria-atomic="true">
-                  €<span id="result-total">1,450</span><span>/mo</span>
+                  €<span id="result-total">1,445</span><span>/mo</span>
                 </div>
-                <div class="result-per">Per person: €<span id="result-per">1,450</span></div>
+                <div class="result-per">Per household member: €<span id="result-per">1,445</span></div>
               </div>
               <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#4A6741" stroke-width="1.5" stroke-linecap="round" opacity=".35" aria-hidden="true"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
             </div>
@@ -786,24 +824,24 @@ site-footer,#site-footer{background:#0E1E2B}
             <div class="breakdown-grid">
               <div class="breakdown-item">
                 <span class="breakdown-name"><span class="breakdown-dot" style="background:#1B4F72"></span>Rent</span>
-                <span class="breakdown-val">€<span id="bd-rent">900</span></span>
+                <span class="breakdown-val">€<span id="bd-rent">1,210</span></span>
               </div>
               <div class="breakdown-item">
                 <span class="breakdown-name"><span class="breakdown-dot" style="background:#C0573D"></span>Groceries</span>
-                <span class="breakdown-val">€<span id="bd-food">300</span></span>
+                <span class="breakdown-val">€<span id="bd-food">130</span></span>
               </div>
               <div class="breakdown-item">
                 <span class="breakdown-name"><span class="breakdown-dot" style="background:#4A6741"></span>Transport</span>
-                <span class="breakdown-val">€<span id="bd-transport">70</span></span>
+                <span class="breakdown-val">€<span id="bd-transport">45</span></span>
               </div>
               <div class="breakdown-item">
-                <span class="breakdown-name"><span class="breakdown-dot" style="background:#8B3A6A"></span>Utilities</span>
-                <span class="breakdown-val">€<span id="bd-other">180</span></span>
+                <span class="breakdown-name"><span class="breakdown-dot" style="background:#8B3A6A"></span>Utilities &amp; Bills</span>
+                <span class="breakdown-val">€<span id="bd-other">60</span></span>
               </div>
             </div>
 
             <p class="calc-note">
-              * Estimates based on Q4 2024 data. Actual costs vary by lifestyle.
+              * Free editorial estimate built from city-level market ranges for Portugal. It is designed for planning, not as an official live pricing feed.
               <a href="guides/portugal-cost-of-living.html">Full cost of living guide →</a>
             </p>
           </div>
@@ -908,7 +946,7 @@ site-footer,#site-footer{background:#0E1E2B}
       </div>
 
       <!-- Newsletter -->
-      <div class="newsletter-card mt-10">
+      <div id="newsletter" class="newsletter-card mt-10">
         <div>
           <h3>Weekly Portugal Newsletter</h3>
           <p>Every Tuesday — visa updates, rental trends and community stories. Join 12,000+ readers.</p>
@@ -964,7 +1002,7 @@ site-footer,#site-footer{background:#0E1E2B}
         <h4>Tools</h4>
         <ul>
           <li><a href="#calculator">Cost of Living Calculator</a></li>
-          <li><a href="#">Community</a></li>
+          <li><a href="#community-heading">Community</a></li>
           <li><a href="#newsletter">Newsletter</a></li>
         </ul>
       </div>
@@ -1008,43 +1046,279 @@ mobileNav.querySelectorAll('a').forEach(a => {
 });
 
 /* ── Cost of Living Calculator ── */
-const COSTS = {
-  Lisbon:  { studio:{rent:900,food:400,transport:80,other:120},  one:{rent:1200,food:400,transport:80,other:120},  two:{rent:1700,food:400,transport:80,other:120}  },
-  Porto:   { studio:{rent:700,food:350,transport:70,other:100},  one:{rent:950,food:350,transport:70,other:100},   two:{rent:1350,food:350,transport:70,other:100}  },
-  Algarve: { studio:{rent:800,food:370,transport:90,other:130},  one:{rent:1100,food:370,transport:90,other:130},  two:{rent:1500,food:370,transport:90,other:130}  },
-  Braga:   { studio:{rent:550,food:290,transport:60,other:90},   one:{rent:750,food:290,transport:60,other:90},    two:{rent:1050,food:290,transport:60,other:90}   },
+const CITY_COSTS = {
+  "Lisbon": {
+    "rentBase": 980,
+    "rentStep": 230,
+    "groceriesAdult": 285,
+    "groceriesKid": 165,
+    "transportAdult": 45,
+    "transportKid": 24,
+    "utilitiesBase": 150
+  },
+  "Porto": {
+    "rentBase": 760,
+    "rentStep": 180,
+    "groceriesAdult": 255,
+    "groceriesKid": 145,
+    "transportAdult": 40,
+    "transportKid": 22,
+    "utilitiesBase": 130
+  },
+  "Braga": {
+    "rentBase": 560,
+    "rentStep": 130,
+    "groceriesAdult": 230,
+    "groceriesKid": 130,
+    "transportAdult": 34,
+    "transportKid": 18,
+    "utilitiesBase": 115
+  },
+  "Coimbra": {
+    "rentBase": 600,
+    "rentStep": 140,
+    "groceriesAdult": 235,
+    "groceriesKid": 132,
+    "transportAdult": 35,
+    "transportKid": 18,
+    "utilitiesBase": 118
+  },
+  "Aveiro": {
+    "rentBase": 640,
+    "rentStep": 150,
+    "groceriesAdult": 240,
+    "groceriesKid": 136,
+    "transportAdult": 36,
+    "transportKid": 19,
+    "utilitiesBase": 120
+  },
+  "Faro": {
+    "rentBase": 720,
+    "rentStep": 170,
+    "groceriesAdult": 248,
+    "groceriesKid": 140,
+    "transportAdult": 38,
+    "transportKid": 20,
+    "utilitiesBase": 125
+  },
+  "Setubal": {
+    "rentBase": 680,
+    "rentStep": 160,
+    "groceriesAdult": 244,
+    "groceriesKid": 138,
+    "transportAdult": 37,
+    "transportKid": 20,
+    "utilitiesBase": 122
+  },
+  "Cascais": {
+    "rentBase": 1050,
+    "rentStep": 260,
+    "groceriesAdult": 300,
+    "groceriesKid": 175,
+    "transportAdult": 48,
+    "transportKid": 26,
+    "utilitiesBase": 158
+  },
+  "Sintra": {
+    "rentBase": 790,
+    "rentStep": 185,
+    "groceriesAdult": 252,
+    "groceriesKid": 142,
+    "transportAdult": 39,
+    "transportKid": 21,
+    "utilitiesBase": 128
+  },
+  "Funchal": {
+    "rentBase": 700,
+    "rentStep": 165,
+    "groceriesAdult": 246,
+    "groceriesKid": 139,
+    "transportAdult": 36,
+    "transportKid": 20,
+    "utilitiesBase": 123
+  },
+  "Ponta Delgada": {
+    "rentBase": 620,
+    "rentStep": 145,
+    "groceriesAdult": 242,
+    "groceriesKid": 136,
+    "transportAdult": 34,
+    "transportKid": 18,
+    "utilitiesBase": 120
+  },
+  "Leiria": {
+    "rentBase": 580,
+    "rentStep": 135,
+    "groceriesAdult": 232,
+    "groceriesKid": 131,
+    "transportAdult": 34,
+    "transportKid": 18,
+    "utilitiesBase": 116
+  },
+  "Viseu": {
+    "rentBase": 540,
+    "rentStep": 125,
+    "groceriesAdult": 228,
+    "groceriesKid": 128,
+    "transportAdult": 33,
+    "transportKid": 17,
+    "utilitiesBase": 112
+  },
+  "Viana do Castelo": {
+    "rentBase": 560,
+    "rentStep": 130,
+    "groceriesAdult": 230,
+    "groceriesKid": 130,
+    "transportAdult": 33,
+    "transportKid": 17,
+    "utilitiesBase": 114
+  },
+  "Evora": {
+    "rentBase": 570,
+    "rentStep": 130,
+    "groceriesAdult": 232,
+    "groceriesKid": 131,
+    "transportAdult": 34,
+    "transportKid": 18,
+    "utilitiesBase": 114
+  },
+  "Santarem": {
+    "rentBase": 550,
+    "rentStep": 125,
+    "groceriesAdult": 228,
+    "groceriesKid": 128,
+    "transportAdult": 34,
+    "transportKid": 18,
+    "utilitiesBase": 113
+  },
+  "Castelo Branco": {
+    "rentBase": 500,
+    "rentStep": 115,
+    "groceriesAdult": 224,
+    "groceriesKid": 126,
+    "transportAdult": 32,
+    "transportKid": 17,
+    "utilitiesBase": 110
+  },
+  "Guarda": {
+    "rentBase": 470,
+    "rentStep": 105,
+    "groceriesAdult": 220,
+    "groceriesKid": 124,
+    "transportAdult": 31,
+    "transportKid": 16,
+    "utilitiesBase": 108
+  },
+  "Beja": {
+    "rentBase": 510,
+    "rentStep": 115,
+    "groceriesAdult": 225,
+    "groceriesKid": 127,
+    "transportAdult": 33,
+    "transportKid": 17,
+    "utilitiesBase": 111
+  },
+  "Braganca": {
+    "rentBase": 480,
+    "rentStep": 110,
+    "groceriesAdult": 222,
+    "groceriesKid": 125,
+    "transportAdult": 31,
+    "transportKid": 16,
+    "utilitiesBase": 109
+  },
+  "Vila Real": {
+    "rentBase": 500,
+    "rentStep": 115,
+    "groceriesAdult": 224,
+    "groceriesKid": 126,
+    "transportAdult": 32,
+    "transportKid": 17,
+    "utilitiesBase": 110
+  },
+  "Portimao": {
+    "rentBase": 750,
+    "rentStep": 175,
+    "groceriesAdult": 250,
+    "groceriesKid": 142,
+    "transportAdult": 37,
+    "transportKid": 20,
+    "utilitiesBase": 126
+  },
+  "Lagos": {
+    "rentBase": 820,
+    "rentStep": 190,
+    "groceriesAdult": 258,
+    "groceriesKid": 146,
+    "transportAdult": 38,
+    "transportKid": 21,
+    "utilitiesBase": 130
+  },
+  "Matosinhos": {
+    "rentBase": 730,
+    "rentStep": 175,
+    "groceriesAdult": 252,
+    "groceriesKid": 143,
+    "transportAdult": 39,
+    "transportKid": 21,
+    "utilitiesBase": 128
+  },
+  "Guimaraes": {
+    "rentBase": 550,
+    "rentStep": 125,
+    "groceriesAdult": 228,
+    "groceriesKid": 128,
+    "transportAdult": 33,
+    "transportKid": 17,
+    "utilitiesBase": 113
+  }
 };
 
+const adultsSelect = document.getElementById('adults-select');
+const kidsSelect   = document.getElementById('kids-select');
 const citySelect   = document.getElementById('city-select');
-const peopleSelect = document.getElementById('people-select');
 const typeSelect   = document.getElementById('type-select');
 
-function updateCalc() {
-  const city    = citySelect.value;
-  const people  = parseInt(peopleSelect.value, 10);
-  const type    = typeSelect.value;
-  const d       = COSTS[city][type];
+const HOME_TYPE_INDEX = { T0:0, T1:1, T2:2, T3:3, T4:4, T5:5 };
 
-  const rent      = d.rent;
-  const food      = d.food * people;
-  const transport = d.transport * people;
-  const other     = d.other;
-  const total     = rent + food + transport + other;
-
-  const fmt = (n) => n.toLocaleString('en-GB');
-
-  document.getElementById('result-city-label').textContent = `${city} · ${people} ${people === 1 ? 'Person' : 'People'}`;
-  document.getElementById('result-total').textContent      = fmt(total);
-  document.getElementById('result-per').textContent        = fmt(Math.round(total / people));
-  document.getElementById('bd-rent').textContent           = fmt(rent);
-  document.getElementById('bd-food').textContent           = fmt(food);
-  document.getElementById('bd-transport').textContent      = fmt(transport);
-  document.getElementById('bd-other').textContent          = fmt(other);
+function formatMoney(value) {
+  return Math.round(value).toLocaleString('en-GB');
 }
 
-citySelect.addEventListener('change',   updateCalc);
-peopleSelect.addEventListener('change', updateCalc);
-typeSelect.addEventListener('change',   updateCalc);
+function pluralize(count, singular, plural) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function updateCalc() {
+  const cityData = CITY_COSTS[citySelect.value];
+  const adults   = parseInt(adultsSelect.value, 10);
+  const kids     = parseInt(kidsSelect.value, 10);
+  const homeType = typeSelect.value;
+  const homeStep = HOME_TYPE_INDEX[homeType];
+
+  const rent = cityData.rentBase + (cityData.rentStep * homeStep);
+  const groceries = (cityData.groceriesAdult * adults) + (cityData.groceriesKid * kids);
+  const transport = (cityData.transportAdult * adults) + (cityData.transportKid * kids);
+  const utilities = cityData.utilitiesBase + (homeStep * 18) + Math.max(0, adults - 1) * 16 + (kids * 10);
+
+  const total = rent + groceries + transport + utilities;
+  const householdSize = adults + kids;
+  const perPerson = householdSize > 0 ? total / householdSize : total;
+
+  document.getElementById('result-city-label').textContent =
+    `${citySelect.value} · ${pluralize(adults, 'Adult', 'Adults')} · ${pluralize(kids, 'Kid', 'Kids')} · ${homeType}`;
+  document.getElementById('result-total').textContent = formatMoney(total);
+  document.getElementById('result-per').textContent = formatMoney(perPerson);
+  document.getElementById('bd-rent').textContent = formatMoney(rent);
+  document.getElementById('bd-food').textContent = formatMoney(groceries);
+  document.getElementById('bd-transport').textContent = formatMoney(transport);
+  document.getElementById('bd-other').textContent = formatMoney(utilities);
+}
+
+citySelect.addEventListener('change', updateCalc);
+adultsSelect.addEventListener('change', updateCalc);
+kidsSelect.addEventListener('change', updateCalc);
+typeSelect.addEventListener('change', updateCalc);
 updateCalc(); /* init */
 
 /* ── Newsletter dummy submit ── */
