@@ -1170,7 +1170,12 @@ const communitySubmitBtn = document.getElementById('community-submit-btn');
 const communitySubmitStatus = document.getElementById('community-submit-status');
 
 let communitySupabase = null;
-if (window.supabase && COMMUNITY_SUPABASE_URL !== 'https://fsukuoiaebzqccbrdtwg.supabase.co' && COMMUNITY_SUPABASE_ANON_KEY !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzdWt1b2lhZWJ6cWNjYnJkdHdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2NDI2NDQsImV4cCI6MjA5MTIxODY0NH0.z49XsGxWSHkO_bk65KtakI9_04xdsr-ED9OkMjW05XM') {
+if (
+  window.supabase &&
+  typeof window.supabase.createClient === 'function' &&
+  COMMUNITY_SUPABASE_URL &&
+  COMMUNITY_SUPABASE_ANON_KEY
+) {
   communitySupabase = window.supabase.createClient(COMMUNITY_SUPABASE_URL, COMMUNITY_SUPABASE_ANON_KEY);
 }
 
@@ -1180,7 +1185,7 @@ if (communityForm) {
 
     if (!communitySupabase) {
       if (communitySubmitStatus) {
-        communitySubmitStatus.textContent = 'Supabase is not configured yet. Add your project URL and anon key in the script first.';
+        communitySubmitStatus.textContent = 'Supabase connection is unavailable on this page. Check that the Supabase script loaded correctly and try again.';
         communitySubmitStatus.style.color = '#C0573D';
       }
       return;
