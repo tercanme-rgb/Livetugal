@@ -291,14 +291,25 @@ select.field-select:focus{border-color:var(--terra)}
 .sidebar-sticky{position:sticky;top:80px}
 
 /* ───────────────── COMMUNITY ───────────────── */
-.community-section{background:var(--white)}
-.community-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-.community-card{
-  background:var(--cream);border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:20px;
-  box-shadow:var(--shadow-sm);transition:box-shadow .2s;
+.community-section{background:var(--white);overflow:hidden}
+.community-marquee-wrap{position:relative;margin-inline:calc(var(--pad-x) * -1)}
+.community-marquee-wrap::before,
+.community-marquee-wrap::after{
+  content:"";position:absolute;top:0;bottom:0;width:84px;z-index:2;pointer-events:none;
 }
-.community-card:hover{box-shadow:var(--shadow-md)}
+.community-marquee-wrap::before{left:0;background:linear-gradient(to right,var(--white),rgba(255,255,255,0))}
+.community-marquee-wrap::after{right:0;background:linear-gradient(to left,var(--white),rgba(255,255,255,0))}
+.community-marquee{overflow:hidden}
+.community-marquee + .community-marquee{margin-top:18px}
+.community-track{display:flex;align-items:stretch;gap:16px;width:max-content;will-change:transform}
+.community-marquee--left .community-track{animation:community-left 46s linear infinite}
+.community-marquee--right .community-track{animation:community-right 52s linear infinite}
+.community-marquee:hover .community-track{animation-play-state:paused}
+.community-card{
+  width:min(315px,82vw);background:var(--cream);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm);transition:transform .2s ease, box-shadow .2s ease;
+}
+.community-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .community-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .avatar{
   width:42px;height:42px;border-radius:50%;flex-shrink:0;
@@ -306,10 +317,42 @@ select.field-select:focus{border-color:var(--terra)}
   font-weight:600;font-size:16px;background:rgba(192,87,61,.1);color:var(--terra);
 }
 .author-name{font-size:14px;font-weight:600;color:var(--ink)}
-.author-meta{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:4px;margin-top:2px}
+.author-meta{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:4px;margin-top:2px;flex-wrap:wrap}
 .author-meta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
 .community-text{font-size:14px;line-height:1.65;color:var(--mid)}
 .community-cta{text-align:center;margin-top:36px}
+.community-form-modal{
+  position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  padding:24px;background:rgba(26,18,8,.45);
+}
+.community-form-modal.open{display:flex}
+.community-form-dialog{
+  width:min(680px,100%);background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);padding:28px;position:relative;
+}
+.community-form-close{
+  position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);
+  background:var(--white);color:var(--ink);cursor:pointer;font-size:20px;line-height:1;
+}
+.community-form-head h3{margin-bottom:8px}
+.community-form-head p{font-size:14px;max-width:520px}
+.community-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.community-field{display:flex;flex-direction:column;gap:8px}
+.community-field label{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mid)}
+.community-field input,
+.community-field select{
+  height:46px;padding:0 14px;border:1.5px solid var(--border);border-radius:var(--radius-md);
+  background:var(--cream);font:inherit;color:var(--ink);outline:none;
+}
+.community-field input:focus,
+.community-field select:focus{border-color:var(--terra);box-shadow:0 0 0 3px rgba(192,87,61,.12)}
+.community-field--full{grid-column:1 / -1}
+.community-form-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:24px}
+.community-form-note{font-size:12px;color:var(--mute);max-width:380px}
+@keyframes community-left{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 8px))}}
+@keyframes community-right{from{transform:translateX(calc(-50% - 8px))}to{transform:translateX(0)}}
+
+.community-form-actions .btn[disabled]{opacity:.65;cursor:not-allowed;filter:none}
 
 /* ───────────────── NEWSLETTER ───────────────── */
 .newsletter-card{
@@ -377,6 +420,10 @@ site-footer,#site-footer{background:#0E1E2B}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .calc-body{padding:24px 20px}
   .form-row{grid-template-columns:1fr 1fr}
+  .community-marquee-wrap::before,
+  .community-marquee-wrap::after{width:34px}
+  .community-form-dialog{padding:24px 18px}
+  .community-form-grid{grid-template-columns:1fr}
 }
 
 /* ───────────────── UTILITIES ───────────────── */
@@ -391,6 +438,8 @@ site-footer,#site-footer{background:#0E1E2B}
 .py-16{padding-block:64px}
 .py-5{padding-block:20px}
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -880,69 +929,110 @@ site-footer,#site-footer{background:#0E1E2B}
         <p>Real experiences from our community of expats who have already made the move to Portugal.</p>
       </header>
 
-      <div class="community-grid" itemscope itemtype="https://schema.org/ItemList">
-        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
-          <div class="community-meta">
-            <div class="avatar">M</div>
-            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-name" itemprop="name">Michael A.</div>
-              <div class="author-meta">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-                <time>2 hours ago</time>&nbsp;· Lisbon
-              </div>
-            </address>
-          </div>
-          <p class="community-text" itemprop="reviewBody">Got my NIF number in Lisbon today! The process was much simpler than I expected — took just one afternoon.</p>
-        </article>
+      <div class="community-marquee-wrap" itemscope itemtype="https://schema.org/ItemList">
+        <div class="community-marquee community-marquee--left" aria-label="Community reviews moving from right to left">
+          <div class="community-track">
+            <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+              <div class="community-meta"><div class="avatar">M</div><address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-name" itemprop="name">Michael A.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 hours ago</time>&nbsp;· Lisbon</div></address></div>
+              <p class="community-text" itemprop="reviewBody">Got my NIF number in Lisbon today. The process was much simpler than I expected — took just one afternoon.</p>
+            </article>
+            <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
+              <div class="community-meta"><div class="avatar">E</div><address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person"><div class="author-name" itemprop="name">Elif K.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>5 hours ago</time>&nbsp;· Porto</div></address></div>
+              <p class="community-text" itemprop="reviewBody">Found a beautiful flat in Porto, just a 5-minute walk from Bolhão metro. The rent negotiation guide here saved me €200/month.</p>
+            </article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">J</div><address class="not-italic"><div class="author-name">James D.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>1 day ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">My D7 visa was finally approved. Took 3 months but absolutely worth the wait. The visa guide here was spot-on.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">Z</div><address class="not-italic"><div class="author-name">Zeynep T.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">Opened an account at ActivoBank — English-speaking staff made it completely effortless. Highly recommend for expats.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">A</div><address class="not-italic"><div class="author-name">Ahmet Y.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>3 days ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">I moved from Istanbul and expected the paperwork to be chaos. The checklist here made the sequence much easier to manage.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">L</div><address class="not-italic"><div class="author-name">Leyla M.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>4 days ago</time>&nbsp;· Cascais</div></address></div><p class="community-text">The cost-of-living calculator gave me a much more realistic idea of what I needed before signing anything.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">C</div><address class="not-italic"><div class="author-name">Chris W.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>6 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">I used the banking guide before arrival and it helped me avoid choosing the first bank just because it had the loudest ads.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">N</div><address class="not-italic"><div class="author-name">Natalia S.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>1 week ago</time>&nbsp;· Braga</div></address></div><p class="community-text">Coming from Russia, I wanted the rent and paperwork sections in one place. This site made the setup phase much less stressful.</p></article>
 
-        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
-          <div class="community-meta">
-            <div class="avatar">E</div>
-            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-name" itemprop="name">Elif K.</div>
-              <div class="author-meta">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-                <time>5 hours ago</time>&nbsp;· Porto
-              </div>
-            </address>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">M</div><address class="not-italic"><div class="author-name">Michael A.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 hours ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">Got my NIF number in Lisbon today. The process was much simpler than I expected — took just one afternoon.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">E</div><address class="not-italic"><div class="author-name">Elif K.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>5 hours ago</time>&nbsp;· Porto</div></address></div><p class="community-text">Found a beautiful flat in Porto, just a 5-minute walk from Bolhão metro. The rent negotiation guide here saved me €200/month.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">J</div><address class="not-italic"><div class="author-name">James D.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>1 day ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">My D7 visa was finally approved. Took 3 months but absolutely worth the wait. The visa guide here was spot-on.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">Z</div><address class="not-italic"><div class="author-name">Zeynep T.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">Opened an account at ActivoBank — English-speaking staff made it completely effortless. Highly recommend for expats.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">A</div><address class="not-italic"><div class="author-name">Ahmet Y.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>3 days ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">I moved from Istanbul and expected the paperwork to be chaos. The checklist here made the sequence much easier to manage.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">L</div><address class="not-italic"><div class="author-name">Leyla M.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>4 days ago</time>&nbsp;· Cascais</div></address></div><p class="community-text">The cost-of-living calculator gave me a much more realistic idea of what I needed before signing anything.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">C</div><address class="not-italic"><div class="author-name">Chris W.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>6 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">I used the banking guide before arrival and it helped me avoid choosing the first bank just because it had the loudest ads.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">N</div><address class="not-italic"><div class="author-name">Natalia S.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>1 week ago</time>&nbsp;· Braga</div></address></div><p class="community-text">Coming from Russia, I wanted the rent and paperwork sections in one place. This site made the setup phase much less stressful.</p></article>
           </div>
-          <p class="community-text" itemprop="reviewBody">Found a beautiful flat in Porto, just a 5-minute walk from Bolhão metro. The rent negotiation guide here saved me €200/month.</p>
-        </article>
+        </div>
 
-        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
-          <div class="community-meta">
-            <div class="avatar">J</div>
-            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-name" itemprop="name">James D.</div>
-              <div class="author-meta">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-                <time>1 day ago</time>&nbsp;· Lisbon
-              </div>
-            </address>
-          </div>
-          <p class="community-text" itemprop="reviewBody">My D7 visa was finally approved! Took 3 months but absolutely worth the wait. The visa guide here was spot-on.</p>
-        </article>
+        <div class="community-marquee community-marquee--right" aria-label="Community reviews moving from left to right">
+          <div class="community-track">
+            <article class="community-card"><div class="community-meta"><div class="avatar">D</div><address class="not-italic"><div class="author-name">Deniz O.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>8 days ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">The visa guide answered the exact D7 versus D8 questions I kept seeing people confuse in forums.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">I</div><address class="not-italic"><div class="author-name">Irina V.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>9 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">The transport guide changed where I chose to live. I thought I was choosing a flat. I was really choosing my commute.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">S</div><address class="not-italic"><div class="author-name">Serkan B.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>10 days ago</time>&nbsp;· Setúbal</div></address></div><p class="community-text">I am Turkish and the paperwork sequence was what I feared most. The article structure here made the order finally click.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">A</div><address class="not-italic"><div class="author-name">Amanda R.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>11 days ago</time>&nbsp;· Cascais</div></address></div><p class="community-text">As an American moving with kids, I appreciated having rent, tax, and transport in one ecosystem instead of hunting across random blogs.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">O</div><address class="not-italic"><div class="author-name">Oksana P.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>12 days ago</time>&nbsp;· Faro</div></address></div><p class="community-text">The banking and rent checklists were the most practical part for me. They helped me prepare documents before I started messaging anyone.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">M</div><address class="not-italic"><div class="author-name">Mehmet C.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 weeks ago</time>&nbsp;· Braga</div></address></div><p class="community-text">I nearly signed a rental too fast. The scam section slowed me down in the best way.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">J</div><address class="not-italic"><div class="author-name">Julia T.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 weeks ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">As an American freelancer, the tax section helped me understand which questions actually needed a specialist and which ones were just admin basics.</p></article>
+            <article class="community-card"><div class="community-meta"><div class="avatar">A</div><address class="not-italic"><div class="author-name">Anastasia K.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>15 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">Russian-speaking communities can be helpful, but this site gave me a cleaner overall roadmap in English.</p></article>
 
-        <article class="community-card" itemscope itemtype="https://schema.org/Review" itemprop="itemListElement">
-          <div class="community-meta">
-            <div class="avatar">Z</div>
-            <address class="not-italic" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <div class="author-name" itemprop="name">Zeynep T.</div>
-              <div class="author-meta">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-                <time>2 days ago</time>&nbsp;· Porto
-              </div>
-            </address>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">D</div><address class="not-italic"><div class="author-name">Deniz O.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>8 days ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">The visa guide answered the exact D7 versus D8 questions I kept seeing people confuse in forums.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">I</div><address class="not-italic"><div class="author-name">Irina V.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>9 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">The transport guide changed where I chose to live. I thought I was choosing a flat. I was really choosing my commute.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">S</div><address class="not-italic"><div class="author-name">Serkan B.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>10 days ago</time>&nbsp;· Setúbal</div></address></div><p class="community-text">I am Turkish and the paperwork sequence was what I feared most. The article structure here made the order finally click.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">A</div><address class="not-italic"><div class="author-name">Amanda R.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>11 days ago</time>&nbsp;· Cascais</div></address></div><p class="community-text">As an American moving with kids, I appreciated having rent, tax, and transport in one ecosystem instead of hunting across random blogs.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">O</div><address class="not-italic"><div class="author-name">Oksana P.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>12 days ago</time>&nbsp;· Faro</div></address></div><p class="community-text">The banking and rent checklists were the most practical part for me. They helped me prepare documents before I started messaging anyone.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">M</div><address class="not-italic"><div class="author-name">Mehmet C.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 weeks ago</time>&nbsp;· Braga</div></address></div><p class="community-text">I nearly signed a rental too fast. The scam section slowed me down in the best way.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">J</div><address class="not-italic"><div class="author-name">Julia T.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>2 weeks ago</time>&nbsp;· Lisbon</div></address></div><p class="community-text">As an American freelancer, the tax section helped me understand which questions actually needed a specialist and which ones were just admin basics.</p></article>
+            <article class="community-card" aria-hidden="true"><div class="community-meta"><div class="avatar">A</div><address class="not-italic"><div class="author-name">Anastasia K.</div><div class="author-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg><time>15 days ago</time>&nbsp;· Porto</div></address></div><p class="community-text">Russian-speaking communities can be helpful, but this site gave me a cleaner overall roadmap in English.</p></article>
           </div>
-          <p class="community-text" itemprop="reviewBody">Opened an account at ActivoBank — English-speaking staff made it completely effortless. Highly recommend for expats.</p>
-        </article>
+        </div>
       </div>
 
       <div class="community-cta mt-8">
-        <a href="#" class="btn btn-outline">
+        <button type="button" class="btn btn-outline" id="open-community-form">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           Join the Community
-        </a>
+        </button>
+      </div>
+
+      <div class="community-form-modal" id="community-form-modal" aria-hidden="true">
+        <div class="community-form-dialog" role="dialog" aria-modal="true" aria-labelledby="community-form-title">
+          <button type="button" class="community-form-close" id="close-community-form" aria-label="Close community form">×</button>
+          <div class="community-form-head">
+            <h3 id="community-form-title">Join the Livetugal Community</h3>
+            <p>Share your details and we will keep you in the loop on Portugal guides, practical updates, and community news.</p>
+          </div>
+          <form class="community-form" id="community-form">
+            <div class="community-form-grid">
+              <div class="community-field">
+                <label for="community-full-name">Full name</label>
+                <input id="community-full-name" name="full_name" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="community-field">
+                <label for="community-country">Country</label>
+                <select id="community-country" name="country" required>
+                  <option value="" selected disabled>Select your country</option>
+                  <option>Turkey</option>
+                  <option>United States</option>
+                  <option>Russia</option>
+                  <option>Portugal</option>
+                  <option>United Kingdom</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Netherlands</option>
+                  <option>Brazil</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="community-field">
+                <label for="community-email">Email</label>
+                <input id="community-email" name="email" type="email" placeholder="your@email.com" required />
+              </div>
+              <div class="community-field">
+                <label for="community-phone">Phone <span style="text-transform:none;font-weight:400;color:var(--mute)">(optional)</span></label>
+                <input id="community-phone" name="phone" type="tel" placeholder="+351 …" />
+              </div>
+            </div>
+            <div class="community-form-actions">
+              <p class="community-form-note">Required fields: full name, country, and email. Phone is optional.</p>
+              <button type="submit" class="btn btn-primary" id="community-submit-btn">Send</button>
+            </div>
+            <p class="community-form-note" id="community-submit-status" aria-live="polite" style="margin-top:12px"></p>
+          </form>
+        </div>
       </div>
 
       <!-- Newsletter -->
@@ -958,7 +1048,6 @@ site-footer,#site-footer{background:#0E1E2B}
       </div>
     </div>
   </section>
-
   <!-- ═══════════════════════════════════════════════
        ADSLOT GAMMA — Bottom Leaderboard 728×90
        Post-content audience = highest purchase intent.
@@ -1044,6 +1133,103 @@ mobileNav.querySelectorAll('a').forEach(a => {
     hamBtn.setAttribute('aria-expanded', 'false');
   });
 });
+
+const openCommunityFormBtn = document.getElementById('open-community-form');
+const communityFormModal = document.getElementById('community-form-modal');
+const closeCommunityFormBtn = document.getElementById('close-community-form');
+const communityForm = document.getElementById('community-form');
+
+function openCommunityForm() {
+  communityFormModal.classList.add('open');
+  communityFormModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCommunityForm() {
+  communityFormModal.classList.remove('open');
+  communityFormModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (openCommunityFormBtn && communityFormModal && closeCommunityFormBtn) {
+  openCommunityFormBtn.addEventListener('click', openCommunityForm);
+  closeCommunityFormBtn.addEventListener('click', closeCommunityForm);
+  communityFormModal.addEventListener('click', (event) => {
+    if (event.target === communityFormModal) closeCommunityForm();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && communityFormModal.classList.contains('open')) closeCommunityForm();
+  });
+}
+
+const COMMUNITY_SUPABASE_URL = 'https://fsukuoiaebzqccbrdtwg.supabase.co';
+const COMMUNITY_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzdWt1b2lhZWJ6cWNjYnJkdHdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2NDI2NDQsImV4cCI6MjA5MTIxODY0NH0.z49XsGxWSHkO_bk65KtakI9_04xdsr-ED9OkMjW05XM';
+const COMMUNITY_TABLE = 'community_signups';
+
+const communitySubmitBtn = document.getElementById('community-submit-btn');
+const communitySubmitStatus = document.getElementById('community-submit-status');
+
+let communitySupabase = null;
+if (window.supabase && COMMUNITY_SUPABASE_URL !== 'https://fsukuoiaebzqccbrdtwg.supabase.co' && COMMUNITY_SUPABASE_ANON_KEY !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzdWt1b2lhZWJ6cWNjYnJkdHdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2NDI2NDQsImV4cCI6MjA5MTIxODY0NH0.z49XsGxWSHkO_bk65KtakI9_04xdsr-ED9OkMjW05XM') {
+  communitySupabase = window.supabase.createClient(COMMUNITY_SUPABASE_URL, COMMUNITY_SUPABASE_ANON_KEY);
+}
+
+if (communityForm) {
+  communityForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!communitySupabase) {
+      if (communitySubmitStatus) {
+        communitySubmitStatus.textContent = 'Supabase is not configured yet. Add your project URL and anon key in the script first.';
+        communitySubmitStatus.style.color = '#C0573D';
+      }
+      return;
+    }
+
+    const formData = new FormData(communityForm);
+    const payload = {
+      full_name: String(formData.get('full_name') || '').trim(),
+      country: String(formData.get('country') || '').trim(),
+      email: String(formData.get('email') || '').trim().toLowerCase(),
+      phone: String(formData.get('phone') || '').trim() || null,
+      source_page: 'index',
+      created_at: new Date().toISOString()
+    };
+
+    if (communitySubmitBtn) {
+      communitySubmitBtn.disabled = true;
+      communitySubmitBtn.textContent = 'Sending...';
+    }
+    if (communitySubmitStatus) {
+      communitySubmitStatus.textContent = '';
+    }
+
+    try {
+      const { error } = await communitySupabase.from(COMMUNITY_TABLE).insert([payload]);
+      if (error) throw error;
+
+      communityForm.reset();
+      if (communitySubmitStatus) {
+        communitySubmitStatus.textContent = 'Thanks — your details have been saved.';
+        communitySubmitStatus.style.color = '#2d6a4f';
+      }
+      setTimeout(() => {
+        closeCommunityForm();
+      }, 700);
+    } catch (error) {
+      console.error('Community signup failed:', error);
+      if (communitySubmitStatus) {
+        communitySubmitStatus.textContent = error.message || 'Something went wrong while saving your details.';
+        communitySubmitStatus.style.color = '#C0573D';
+      }
+    } finally {
+      if (communitySubmitBtn) {
+        communitySubmitBtn.disabled = false;
+        communitySubmitBtn.textContent = 'Send';
+      }
+    }
+  });
+}
 
 /* ── Cost of Living Calculator ── */
 const CITY_COSTS = {
