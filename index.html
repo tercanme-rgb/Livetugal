@@ -401,6 +401,60 @@ site-footer,#site-footer{background:#0E1E2B}
 .footer-bottom a{color:rgba(255,255,255,.38);text-decoration:underline;font-size:12px}
 .footer-bottom a:hover{color:rgba(255,255,255,.65)}
 
+
+/* ───────────────── DEEP DIVES ───────────────── */
+.deep-dives-section{padding-block:64px;background:var(--cream)}
+.deep-dives-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px}
+.deep-dive-btn{
+  width:100%;background:transparent;border:none;cursor:pointer;font:inherit;color:inherit;
+  display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:6px 6px 0;
+}
+.deep-dive-icon{
+  width:96px;height:96px;border-radius:50%;background:#EAF3F1;border:1px solid #D8E7E2;
+  display:flex;align-items:center;justify-content:center;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.deep-dive-icon svg{width:46px;height:46px;stroke:var(--azul);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.deep-dive-btn:hover .deep-dive-icon,
+.deep-dive-btn:focus-visible .deep-dive-icon{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#BFD7CF}
+.deep-dive-btn span:last-child{font-size:14px;font-weight:600;line-height:1.45;color:var(--azul);max-width:140px}
+.deep-dive-modal{
+  position:fixed;inset:0;z-index:250;display:flex;justify-content:flex-end;pointer-events:none;
+}
+.deep-dive-modal[aria-hidden="true"]{visibility:hidden}
+.deep-dive-backdrop{
+  position:absolute;inset:0;background:rgba(14,30,43,.48);opacity:0;transition:opacity .28s ease;
+}
+.deep-dive-panel{
+  position:relative;height:100%;width:min(760px,100vw);background:rgba(253,250,247,.98);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:-14px 0 34px rgba(0,0,0,.16);transform:translateX(100%);transition:transform .32s ease;
+  display:flex;flex-direction:column;border-left:1px solid var(--border);overflow:hidden;
+}
+.deep-dive-modal.open{pointer-events:auto;visibility:visible}
+.deep-dive-modal.open .deep-dive-backdrop{opacity:1}
+.deep-dive-modal.open .deep-dive-panel{transform:translateX(0)}
+.deep-dive-topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px 24px 18px;border-bottom:1px solid var(--border)}
+.deep-dive-kicker{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:8px}
+.deep-dive-title{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+.deep-dive-subtitle{font-size:15px;max-width:520px}
+.deep-dive-close{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:var(--white);font-size:24px;line-height:1;cursor:pointer;color:var(--ink);flex-shrink:0}
+.deep-dive-body{padding:24px;overflow:auto}
+.deep-dive-summary{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 18px 16px;margin-bottom:20px}
+.deep-dive-summary p{font-size:15px;line-height:1.72}
+.deep-dive-columns{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+.deep-dive-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px}
+.deep-dive-card h4{font-size:14px;color:var(--ink);margin-bottom:12px}
+.deep-dive-list{list-style:none;display:grid;gap:10px}
+.deep-dive-list li{font-size:14px;color:var(--mid);line-height:1.6}
+.deep-dive-list strong{color:var(--ink)}
+.deep-dive-footnote{font-size:12px;color:var(--mute);margin-top:18px;line-height:1.6}
+@media(max-width:760px){
+  .deep-dives-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .deep-dive-panel{width:100vw}
+  .deep-dive-columns{grid-template-columns:1fr}
+  .deep-dive-topbar,.deep-dive-body{padding:20px}
+}
+
 /* ───────────────── RESPONSIVE ───────────────── */
 @media(max-width:900px){
   .calc-grid{grid-template-columns:1fr}
@@ -1047,6 +1101,102 @@ site-footer,#site-footer{background:#0E1E2B}
         </div>
       </div>
 
+
+  <section class="deep-dives-section" aria-labelledby="deep-dives-heading">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-label">Explore Portugal</span>
+        <h2 id="deep-dives-heading">Portugal Deep Dives</h2>
+        <p>Tap a topic to open a side modal with a structured overview. No separate page, no redirect.</p>
+      </header>
+
+      <div class="deep-dives-grid" role="list">
+        <button class="deep-dive-btn" type="button" data-topic="climate" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 18c1.5-4.5 4.5-7 9-7 1.8 0 3.3.3 4.5 1"/><path d="M8 20c1.2-3 3.2-4.6 6-4.8"/><path d="M12 10c0-2.8 1.2-4.9 3.6-6.5"/><path d="M12 10c-.6-2.2-2.2-3.8-4.8-4.8"/></svg></span>
+          <span>Climate in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="cost" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h16"/><path d="M6 6h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><path d="M8 13h4"/><path d="M15.5 12.5a1.5 1.5 0 1 0 0 .01Z"/></svg></span>
+          <span>Cost of Living in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="healthcare" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/></svg></span>
+          <span>Healthcare in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="living" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10.5V20h14v-9.5"/><path d="M9 20v-5h6v5"/></svg></span>
+          <span>Live in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="moving" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 16h12"/><path d="M14 16l3.5-3.5M14 16l3.5 3.5"/><path d="M5 20h8"/><path d="M7 12c1.6-3.7 4-6.3 7-8"/></svg></span>
+          <span>Moving to Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="fastfacts" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h9l3 3v13H6z"/><path d="M15 4v4h4"/><path d="M9 11h6"/><path d="M9 15h6"/></svg></span>
+          <span>Portugal Fast Facts</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="realestate" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 19h18"/><path d="M5 19V9l7-4 7 4v10"/><path d="M10 19v-5h4v5"/></svg></span>
+          <span>Real Estate in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="renting" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h10"/><path d="M7 12h10"/><path d="M7 17h6"/><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg></span>
+          <span>Renting in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="retire" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v7"/><path d="M7 8h10"/><path d="M8 21c0-3.2 1.8-5 4-5s4 1.8 4 5"/><path d="M6 21h12"/></svg></span>
+          <span>Retire in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="taxes" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M17 7.5c0-1.9-2-3.5-5-3.5S7 5.2 7 7s2.2 2.7 5 3.3 5 1.4 5 3.7-2 4-5 4-5-1.6-5-3.5"/></svg></span>
+          <span>Taxes in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="culture" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4a12 12 0 0 1 0 16"/><path d="M12 4a12 12 0 0 0 0 16"/></svg></span>
+          <span>Traditions and Culture in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="visa" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5h8"/><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M8 10h8"/><path d="M8 14h5"/></svg></span>
+          <span>Visa and Residency in Portugal</span>
+        </button>
+        <button class="deep-dive-btn" type="button" data-topic="where" role="listitem">
+          <span class="deep-dive-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v16"/><path d="M4 12h16"/></svg></span>
+          <span>Where is Portugal?</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="deep-dive-modal" id="deep-dive-modal" aria-hidden="true">
+    <div class="deep-dive-backdrop" data-close-deep-dive></div>
+    <aside class="deep-dive-panel" role="dialog" aria-modal="true" aria-labelledby="deep-dive-title">
+      <div class="deep-dive-topbar">
+        <div>
+          <span class="deep-dive-kicker">Portugal Deep Dive</span>
+          <h3 class="deep-dive-title" id="deep-dive-title">Portugal Deep Dive</h3>
+          <p class="deep-dive-subtitle" id="deep-dive-subtitle"></p>
+        </div>
+        <button type="button" class="deep-dive-close" id="deep-dive-close" aria-label="Close deep dive">×</button>
+      </div>
+      <div class="deep-dive-body">
+        <div class="deep-dive-summary">
+          <p id="deep-dive-summary"></p>
+        </div>
+        <div class="deep-dive-columns">
+          <section class="deep-dive-card">
+            <h4>What to know</h4>
+            <ul class="deep-dive-list" id="deep-dive-points"></ul>
+          </section>
+          <section class="deep-dive-card">
+            <h4>Practical takeaways</h4>
+            <ul class="deep-dive-list" id="deep-dive-takeaways"></ul>
+          </section>
+        </div>
+        <p class="deep-dive-footnote" id="deep-dive-footnote"></p>
+      </div>
+    </aside>
+  </div>
+
       <!-- Newsletter -->
       <div id="newsletter" class="newsletter-card mt-10">
         <div>
@@ -1171,6 +1321,7 @@ if (openCommunityFormBtn && communityFormModal && closeCommunityFormBtn) {
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && communityFormModal.classList.contains('open')) closeCommunityForm();
+    if (event.key === 'Escape' && deepDiveModal && deepDiveModal.classList.contains('open')) closeDeepDive();
   });
 }
 
@@ -1523,6 +1674,324 @@ adultsSelect.addEventListener('change', updateCalc);
 kidsSelect.addEventListener('change', updateCalc);
 typeSelect.addEventListener('change', updateCalc);
 updateCalc(); /* init */
+
+
+const DEEP_DIVE_CONTENT = {
+  climate: {
+    title: 'Climate in Portugal',
+    subtitle: 'North and south feel different in practice, especially in winter.',
+    summary: 'Portugal has a maritime temperate climate overall, but daily experience changes a lot by region. The north is cooler, greener, and wetter; Lisbon sits in the middle with relatively mild winters; the Algarve is warmer, sunnier, and drier for more of the year. Coastal wind, humidity, and building insulation often shape comfort more than raw temperature numbers.',
+    points: [
+      '<strong>North:</strong> More rain, greener landscapes, and cooler winters than the south.',
+      '<strong>South:</strong> Hotter, drier summers and milder winters, especially in the Algarve.',
+      '<strong>Coast vs inland:</strong> Seaside towns can feel cooler and windier, while inland zones usually swing more between seasons.',
+      '<strong>Humidity factor:</strong> A mild winter on paper can still feel cold indoors if the building performs poorly.',
+      '<strong>Summer reality:</strong> Much of Portugal is sunny, but heat intensity rises quickly away from the Atlantic breeze.',
+      '<strong>What to pack:</strong> Light clothing works for warm months, but evenings and winter mornings usually need layers.'
+    ],
+    takeaways: [
+      '<strong>Choose by seasonality:</strong> Braga and Porto suit people comfortable with rain; Algarve suits sun-seekers.',
+      '<strong>Do not underestimate homes:</strong> Comfort depends heavily on insulation, heating, and ventilation.',
+      '<strong>Visit in winter too:</strong> A summer-only scouting trip hides the real living conditions.',
+      '<strong>Check micro-location:</strong> Hilltops, river valleys, and exposed coastal streets can feel very different within the same city.',
+      '<strong>Budget for comfort:</strong> Dehumidifiers, heaters, and better windows can matter more than air-conditioning in some homes.'
+    ],
+    footnote: 'Organized from the source material you provided, including country-guide and fast-facts sections.'
+  },
+  cost: {
+    title: 'Cost of Living in Portugal',
+    subtitle: 'Housing drives the budget more than groceries or transport.',
+    summary: 'Portugal is often cheaper than major North American and UK cities, but affordability depends heavily on where and how you live. Lisbon, Cascais, and premium Algarve markets sit well above smaller inland cities. Groceries, cafés, and public transport can still feel reasonable, but rent, utilities, schooling, and car ownership are the variables that can move the budget sharply.',
+    points: [
+      '<strong>Typical pattern:</strong> Lisbon and premium coastal markets cost more; interior regions cost less.',
+      '<strong>Housing first:</strong> Rent or mortgage is usually the largest monthly line item.',
+      '<strong>Food out:</strong> Dining can still feel reasonable relative to many large foreign cities.',
+      '<strong>Utilities:</strong> Electricity and large appliances can feel expensive versus U.S. expectations.',
+      '<strong>Transport split:</strong> City residents can often avoid a car, while smaller-town life may increase mobility costs.',
+      '<strong>Lifestyle effect:</strong> International schools, imported habits, and constant travel can quickly remove the cost advantage.'
+    ],
+    takeaways: [
+      '<strong>Live 15–30 minutes out:</strong> Often the cleanest way to reduce rent without losing urban access.',
+      '<strong>Budget by lifestyle, not blog averages:</strong> Car ownership, heating, and school choices change the equation fast.',
+      '<strong>Use the calculator above:</strong> It gives a quick working estimate by city and household type.',
+      '<strong>Model a winter budget:</strong> Heating, humidity control, and holiday travel often get ignored.',
+      '<strong>Run two scenarios:</strong> One for arrival year, and one for settled life after deposits, setup costs, and furniture.'
+    ],
+    footnote: 'The modal groups the supplied examples on Lisbon, rural areas, and retiree/expat budgets into one view.'
+  },
+  healthcare: {
+    title: 'Healthcare in Portugal',
+    subtitle: 'Residents can use the public system, but many expats also keep private cover.',
+    summary: 'Portugal offers both public and private healthcare. Public care is accessible to residents, while private insurance is commonly used for speed, language comfort, and easier specialist access. In practice, many newcomers use a hybrid approach: public for broad entitlement and lower-cost coverage, private for faster appointments and preferred hospitals.',
+    points: [
+      '<strong>Public system:</strong> Available to residents, though wait times can be longer for specialists and procedures.',
+      '<strong>Private system:</strong> Broad choice of hospitals and doctors in larger cities.',
+      '<strong>Insurance:</strong> Private plans are generally more affordable than in the U.S., but age and conditions matter.',
+      '<strong>Urban strength:</strong> Lisbon, Porto, and Algarve hubs offer the strongest private infrastructure.',
+      '<strong>Medication access:</strong> Pharmacies are widespread and many routine medications are affordable.',
+      '<strong>Language comfort:</strong> English is easier to find in private urban networks than in smaller public settings.'
+    ],
+    takeaways: [
+      '<strong>Visa applicants:</strong> Private health insurance is often part of the residency setup process.',
+      '<strong>Match plan to age:</strong> A low-cost plan can work for some, but older movers should stress-test the coverage.',
+      '<strong>Check medication availability:</strong> Confirm prescriptions before relocating.',
+      '<strong>Map your nearest providers:</strong> Hospital quality varies less than access time and appointment speed.',
+      '<strong>Think beyond premium price:</strong> Deductibles, co-pays, exclusions, and age repricing matter.'
+    ],
+    footnote: 'This section consolidates the provided details on public access, private hospitals, insurance ranges, and expat usage.'
+  },
+  living: {
+    title: 'Live in Portugal',
+    subtitle: 'Lifestyle fit matters as much as the headline cost advantage.',
+    summary: 'Portugal combines a slower daily rhythm, strong café culture, workable public transport in major cities, and a generally safe environment. The appeal is not only lower cost; it is also the structure of daily life: more walkability, more time outside, stronger neighborhood habits, and easier access to coastline, food culture, and short-distance travel.',
+    points: [
+      '<strong>Daily rhythm:</strong> Social, local, and less frantic than many large Anglo markets.',
+      '<strong>Food and café life:</strong> A major part of the lived experience, not a tourist extra.',
+      '<strong>Mobility:</strong> Lisbon and Porto can work well without a car.',
+      '<strong>Community:</strong> Popular expat hubs make integration easier, though they also bring competition and higher costs.',
+      '<strong>Safety profile:</strong> Portugal consistently benefits from a low-violence international reputation.',
+      '<strong>Trade-off:</strong> Slower pace can feel charming or frustrating depending on your expectations.'
+    ],
+    takeaways: [
+      '<strong>Decide your trade-off:</strong> City energy, coastal calm, or inland value.',
+      '<strong>Test routine, not attractions:</strong> Spend time doing errands, not just sightseeing.',
+      '<strong>Quality-of-life fit:</strong> Portugal works best for people who value pace, walkability, and social daily habits.',
+      '<strong>Measure convenience:</strong> Grocery access, hospitals, and transport matter more than postcard views.',
+      '<strong>Expect adaptation:</strong> Bureaucracy, service speed, and winter housing comfort can be the main friction points.'
+    ],
+    footnote: 'Built from the country guide, retiree guide, and fast-facts material in your source text.'
+  },
+  moving: {
+    title: 'Moving to Portugal',
+    subtitle: 'The move works better when scoping, paperwork, and location choice happen in the right order.',
+    summary: 'A successful move to Portugal usually starts with an exploratory visit, followed by visa strategy, paperwork sequencing, and then housing and banking. Many relocation problems come from doing these steps in the wrong order or choosing a town before understanding weather, transport, and administrative requirements.',
+    points: [
+      '<strong>Start with a visit:</strong> Explore different regions before committing.',
+      '<strong>Ask location questions:</strong> City or town, beach or inland, expat-heavy or local-first.',
+      '<strong>Paperwork matters:</strong> Visa, NIF, banking, and health coverage often interlock.',
+      '<strong>Tourist stay:</strong> Short stays are simple; long-term living needs the proper residency route.',
+      '<strong>Housing timing:</strong> It is easier to choose a lease after testing neighborhoods on the ground.',
+      '<strong>Decision stack:</strong> Climate, budget, admin, and social fit should all be checked before the final move.'
+    ],
+    takeaways: [
+      '<strong>Do not choose from Instagram:</strong> Visit in person and test neighborhoods.',
+      '<strong>Sequence admin carefully:</strong> Each document often unlocks the next one.',
+      '<strong>Join communities:</strong> Local expat groups help, but use them for tactics, not legal certainty.',
+      '<strong>Keep an arrival buffer:</strong> Deposits, temporary stays, and admin delays are normal.',
+      '<strong>Plan the first 90 days:</strong> Most stress comes from the landing phase, not the long-term dream.'
+    ],
+    footnote: 'This is a structured summary of the moving and retirement preparation passages you supplied.'
+  },
+  fastfacts: {
+    title: 'Portugal Fast Facts',
+    subtitle: 'A compact reference view for baseline country context.',
+    summary: 'Portugal is a parliamentary republic in southwestern Europe with a population a little above 10 million, a capital in Lisbon, a euro-based economy, and a long Atlantic coastline. It is compact enough to travel across relatively easily, but diverse enough that climate, cost, and settlement patterns still vary meaningfully by region.',
+    points: [
+      '<strong>Capital:</strong> Lisbon.',
+      '<strong>Language:</strong> Portuguese is the national language; Mirandese has limited official status in the northeast.',
+      '<strong>Currency:</strong> Euro.',
+      '<strong>Country code:</strong> +351, with the .pt internet code.',
+      '<strong>Political system:</strong> Parliamentary democracy with a president and a prime minister.',
+      '<strong>Basic orientation:</strong> Atlantic-facing country on the Iberian Peninsula, west of Spain.'
+    ],
+    takeaways: [
+      '<strong>Use fast facts for orientation:</strong> Good for top-of-funnel readers and quick comparisons.',
+      '<strong>Do not stop at averages:</strong> Portugal is small, but cost and lifestyle still vary sharply by region.',
+      '<strong>Pair with the location modal:</strong> Geography explains much of the climate and pricing variance.',
+      '<strong>Remember scale:</strong> Small country does not mean one single market.',
+      '<strong>Use facts as context, not conclusion:</strong> Moving decisions should still be city- and neighborhood-specific.'
+    ],
+    footnote: 'Summarized from the fast-facts material included in your prompt.'
+  },
+  realestate: {
+    title: 'Real Estate in Portugal',
+    subtitle: 'The market is broad, but price dispersion is significant.',
+    summary: 'Portugal offers a wide range of property types, from urban apartments to rural houses and coastal homes. Capital-city values and prime lifestyle markets are materially higher than non-central and inland zones. Beyond headline pricing, buyers also need to assess humidity exposure, renovation scope, energy performance, and local demand pressure.',
+    points: [
+      '<strong>Range of stock:</strong> Apartments, village homes, coastal properties, and renovation opportunities.',
+      '<strong>Urban premium:</strong> Lisbon and nearby premium zones command the highest pricing.',
+      '<strong>Interior value:</strong> Smaller towns and inland areas usually provide more space per euro.',
+      '<strong>Location logic:</strong> Access, expat demand, and tourism pressure all influence price.',
+      '<strong>Building quality:</strong> Older charm can come with insulation, moisture, or retrofit issues.',
+      '<strong>Demand pockets:</strong> Cascais, parts of Lisbon, and top Algarve towns often price on international demand, not just local wages.'
+    ],
+    takeaways: [
+      '<strong>Define use case first:</strong> Primary home, retirement base, or exploratory rental-to-buy path.',
+      '<strong>Compare center vs edge:</strong> Even small distance shifts can change the numbers substantially.',
+      '<strong>Check building comfort:</strong> Insulation, humidity, and heating matter more than pretty photos.',
+      '<strong>Inspect the block, not just the unit:</strong> Parking, noise, slope, and services affect everyday value.',
+      '<strong>Treat renovation risk seriously:</strong> Cheap headline pricing can hide expensive works.'
+    ],
+    footnote: 'This topic uses the property positioning and regional observations embedded in the source text.'
+  },
+  renting: {
+    title: 'Renting in Portugal',
+    subtitle: 'Rent levels change fast by city, neighborhood, and demand concentration.',
+    summary: 'Rental pricing varies sharply across Portugal. Central Lisbon, Cascais, and top Algarve locations sit far above smaller cities and inland towns, while suburban trade-offs can materially reduce monthly costs. Supply quality also varies: photos can hide humidity, weak heating, poor sound insulation, or difficult access.',
+    points: [
+      '<strong>City-center premium:</strong> Expect the highest rents in prime central urban zones.',
+      '<strong>Outside-center relief:</strong> Prices usually soften quickly once you move outward.',
+      '<strong>Size matters:</strong> The jump from one-bedroom to family-size units is meaningful.',
+      '<strong>Competition:</strong> Desirable expat areas often move faster and require cleaner documentation.',
+      '<strong>Seasonality:</strong> Tourism-heavy markets can distort long-term rental supply and price.',
+      '<strong>Quality spread:</strong> Two homes at similar rent can feel completely different in winter.'
+    ],
+    takeaways: [
+      '<strong>Prepare documents early:</strong> ID, income proof, and supporting paperwork help you move faster.',
+      '<strong>Map commute, not just rent:</strong> Cheap and isolated can become expensive in time.',
+      '<strong>Inspect for winter comfort:</strong> Moisture and thermal performance matter.',
+      '<strong>Test the neighborhood twice:</strong> Once in daytime and once in evening.',
+      '<strong>Keep a backup option:</strong> Good listings can move quickly in the strongest markets.'
+    ],
+    footnote: 'Organized from the rent examples and city comparisons in the source material you pasted.'
+  },
+  retire: {
+    title: 'Retire in Portugal',
+    subtitle: 'Portugal appeals on safety, healthcare, climate, and relative affordability.',
+    summary: 'Portugal remains a strong retirement destination because it combines mild climate, lower day-to-day costs than many North American cities, broad healthcare access, and established expat communities. The best fit depends less on the country in general and more on whether you want city access, beach life, quieter inland living, or an existing foreign community nearby.',
+    points: [
+      '<strong>Why retirees look here:</strong> Safety, lifestyle, and healthcare are recurring drivers.',
+      '<strong>Popular zones:</strong> Lisbon region, Porto, the Silver Coast, and the Algarve all appear repeatedly.',
+      '<strong>Budget logic:</strong> Coastal hotspots cost more; inland and secondary cities cost less.',
+      '<strong>Residency path:</strong> Long-term retirement still requires the correct visa and later residency process.',
+      '<strong>Community factor:</strong> Established expat hubs can reduce loneliness and simplify adaptation.',
+      '<strong>Everyday quality:</strong> Walkability, climate, and food culture matter as much as the spreadsheet.'
+    ],
+    takeaways: [
+      '<strong>Visit before deciding:</strong> Retirement fit depends on pace, weather tolerance, and support network.',
+      '<strong>Plan healthcare realistically:</strong> Insurance, medication, and specialist access deserve early attention.',
+      '<strong>Think long-run:</strong> A holiday town is not always the best everyday town.',
+      '<strong>Stress-test mobility:</strong> Hills, stairs, transport, and hospital access matter more over time.',
+      '<strong>Choose community intentionally:</strong> Some retirees want integration; others want a strong expat circle.'
+    ],
+    footnote: 'Condensed from the retirement guide text included in your material.'
+  },
+  taxes: {
+    title: 'Taxes in Portugal',
+    subtitle: 'Tax planning is a pre-move issue, not an after-arrival issue.',
+    summary: 'Portugal can be tax-efficient for some newcomers, but outcomes depend on residency status, income type, source country rules, and filing obligations. Salary, pension, freelance income, company dividends, rental income, and investments can all behave differently. The main mistake is assuming Portugal is automatically low-tax without checking structure and timing first.',
+    points: [
+      '<strong>Do not assume universal savings:</strong> Tax results differ by salary, pension, freelance income, and investments.',
+      '<strong>Residency matters:</strong> Where you are tax resident changes what is reportable.',
+      '<strong>Portugal filing:</strong> IRS filing and administrative setup remain essential.',
+      '<strong>Cross-border layer:</strong> Home-country obligations may continue depending on nationality and structure.',
+      '<strong>Timing counts:</strong> Arrival date and tax-year planning can materially affect results.',
+      '<strong>Documentation matters:</strong> Income source proof and residency evidence are part of the operating layer.'
+    ],
+    takeaways: [
+      '<strong>Separate basics from advice:</strong> Learn the system first, then use a specialist for optimization.',
+      '<strong>Prepare documentation:</strong> Income source records and residency timing matter.',
+      '<strong>Treat tax as infrastructure:</strong> It should shape your move strategy, not trail behind it.',
+      '<strong>Map income categories:</strong> Tax planning starts with correctly labeling how you earn.',
+      '<strong>Do the work before arrival:</strong> Fixing a poor setup later is usually harder.'
+    ],
+    footnote: 'This is a simplified, non-advisory framing based on the tax themes surfaced in the source content.'
+  },
+  culture: {
+    title: 'Traditions and Culture in Portugal',
+    subtitle: 'Culture is visible in daily habits, music, food, festivals, and local social norms.',
+    summary: 'Portuguese culture blends deep historical layers with a strong family ethic, food traditions, local festivals, café life, and the emotional vocabulary of fado and saudade. What stands out is not a single monument or cliché, but how culture remains embedded in ordinary routines: meals, neighborhood cafés, saints’ celebrations, markets, music, and intergenerational family life.',
+    points: [
+      '<strong>Music:</strong> Fado remains one of the country’s defining cultural forms.',
+      '<strong>Cuisine:</strong> Bacalhau, seafood, pork, olive oil, bread, cheese, and pastel de nata are central reference points.',
+      '<strong>Festivals:</strong> Saints’ festivals, Carnaval, Saint Martin’s Day, and Christmas traditions shape the yearly rhythm.',
+      '<strong>Café culture:</strong> Coffee and social gathering are daily infrastructure, not occasional indulgence.',
+      '<strong>Literature and arts:</strong> Names like Camões, Pessoa, and Saramago sit inside a much older cultural lineage.',
+      '<strong>Regional expression:</strong> Folklore, dance, and food vary noticeably by area.'
+    ],
+    takeaways: [
+      '<strong>Integration is behavioral:</strong> Language basics and local habits matter more than expat rhetoric.',
+      '<strong>Food is social glue:</strong> Meals and cafés are part of how relationships form.',
+      '<strong>Regional identity matters:</strong> Portugal is cohesive, but customs and atmosphere still vary by region.',
+      '<strong>Respect timing and tone:</strong> Small etiquette habits shape how quickly you are accepted.',
+      '<strong>Use culture actively:</strong> Markets, local festivals, and neighborhood cafés are among the fastest ways to feel grounded.'
+    ],
+    footnote: 'Curated from the traditions-and-culture passage you included, including art, music, cuisine, sport, and festivals.'
+  },
+  visa: {
+    title: 'Visa and Residency in Portugal',
+    subtitle: 'Tourist access is easy; long-stay living requires the right route and clean paperwork.',
+    summary: 'For stays beyond ordinary tourist limits, Portugal requires a long-stay visa and then residency steps. The correct path depends on whether the move is for passive income, remote work, retirement, family, or another legal basis. In practice, success depends on choosing the right category early and building a document file that is internally consistent.',
+    points: [
+      '<strong>Short stay vs residency:</strong> Visiting and relocating are different legal tracks.',
+      '<strong>Apply from home country:</strong> Long-stay applications generally begin outside Portugal.',
+      '<strong>Insurance requirement:</strong> Private coverage is commonly part of the file.',
+      '<strong>Long-term path:</strong> After sufficient lawful residence, permanent residency or citizenship may become available, subject to requirements.',
+      '<strong>Language later:</strong> Long-run status goals can involve Portuguese proficiency.',
+      '<strong>Admin chain:</strong> Visa, residence permit, tax number, banking, and healthcare setup are interconnected.'
+    ],
+    takeaways: [
+      '<strong>Pick the category first:</strong> Do not collect documents before you know the correct route.',
+      '<strong>Language matters later:</strong> Long-run residency and citizenship planning can involve Portuguese proficiency.',
+      '<strong>Expect sequencing:</strong> Visa, residency, tax, healthcare, and banking all interconnect.',
+      '<strong>Check validity windows:</strong> Many certificates and policies have timing rules.',
+      '<strong>Build a clean file:</strong> Small inconsistencies across documents can slow the process.'
+    ],
+    footnote: 'This topic is based on the visa and retirement passages in the source text, organized into a cleaner modal format.'
+  },
+  where: {
+    title: 'Where is Portugal?',
+    subtitle: 'Small on the map, but regionally distinct in climate, density, and lifestyle.',
+    summary: 'Portugal sits on the Iberian Peninsula in southwestern Europe, bordered by Spain and the Atlantic. It also includes Madeira and the Azores, which materially expand the country’s geographic identity. Although the country is compact, settlement patterns differ strongly between the dense coastal corridor and the quieter interior.',
+    points: [
+      '<strong>Mainland position:</strong> Western edge of continental Europe.',
+      '<strong>Border logic:</strong> Spain to the north and east, Atlantic to the west and south.',
+      '<strong>Autonomous regions:</strong> Madeira and the Azores are part of Portugal.',
+      '<strong>Regional contrast:</strong> Dense coastal corridors differ sharply from quieter interior zones.',
+      '<strong>Travel scale:</strong> You can cross much of the mainland relatively quickly compared with larger countries.',
+      '<strong>Settlement pattern:</strong> Lisbon, Porto, and the Algarve attract disproportionate international attention.'
+    ],
+    takeaways: [
+      '<strong>Geography explains lifestyle:</strong> Weather, access, and market prices follow regional structure.',
+      '<strong>Do not think only Lisbon:</strong> Porto, Silver Coast, Alentejo, Algarve, Madeira, and the Azores serve different profiles.',
+      '<strong>Travel the map:</strong> Understanding Portugal requires seeing more than one region.',
+      '<strong>Think in regions, not headlines:</strong> A national article rarely captures local reality.',
+      '<strong>Use geography strategically:</strong> The right region can solve for climate, budget, and pace at once.'
+    ],
+    footnote: 'Summarized from the “Where is Portugal?” travel and geography material provided in your source block.'
+  }
+};
+
+const deepDiveModal = document.getElementById('deep-dive-modal');
+const deepDiveTitle = document.getElementById('deep-dive-title');
+const deepDiveSubtitle = document.getElementById('deep-dive-subtitle');
+const deepDiveSummary = document.getElementById('deep-dive-summary');
+const deepDivePoints = document.getElementById('deep-dive-points');
+const deepDiveTakeaways = document.getElementById('deep-dive-takeaways');
+const deepDiveFootnote = document.getElementById('deep-dive-footnote');
+const deepDiveClose = document.getElementById('deep-dive-close');
+
+function renderDeepDive(topicKey) {
+  const topic = DEEP_DIVE_CONTENT[topicKey];
+  if (!topic) return;
+  deepDiveTitle.textContent = topic.title;
+  deepDiveSubtitle.textContent = topic.subtitle;
+  deepDiveSummary.textContent = topic.summary;
+  deepDivePoints.innerHTML = topic.points.map(item => `<li>${item}</li>`).join('');
+  deepDiveTakeaways.innerHTML = topic.takeaways.map(item => `<li>${item}</li>`).join('');
+  deepDiveFootnote.textContent = topic.footnote;
+}
+
+function openDeepDive(topicKey) {
+  renderDeepDive(topicKey);
+  deepDiveModal.classList.add('open');
+  deepDiveModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDeepDive() {
+  deepDiveModal.classList.remove('open');
+  deepDiveModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.deep-dive-btn').forEach((btn) => {
+  btn.addEventListener('click', () => openDeepDive(btn.dataset.topic));
+});
+if (deepDiveClose) deepDiveClose.addEventListener('click', closeDeepDive);
+document.querySelectorAll('[data-close-deep-dive]').forEach((el) => {
+  el.addEventListener('click', closeDeepDive);
+});
 
 /* ── Newsletter dummy submit ── */
 document.querySelector('.nl-btn').addEventListener('click', function() {
