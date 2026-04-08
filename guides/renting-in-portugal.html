@@ -68,6 +68,24 @@ aside{display:grid;gap:16px;align-content:start}.toc-card,.faq-card,.ad-card,.in
 #site-footer{background:#0E1E2B}.footer-inner{padding:52px 0 28px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}.footer-logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none}.footer-logo .logo-mark{width:48px;height:48px;filter:brightness(1.08)}.footer-logo-text{font-family:var(--font-body);font-size:24px;font-weight:500;letter-spacing:.2em;color:#fff;text-transform:uppercase;line-height:1}.footer-logo-sub{display:block;font-size:9px;font-weight:500;letter-spacing:.34em;color:rgba(255,255,255,.58);text-transform:uppercase;margin-top:6px;line-height:1.2}.footer-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-top:12px;max-width:260px}.footer-col h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:16px}.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}.footer-col ul a{font-size:13px;color:rgba(255,255,255,.55);transition:color .15s}.footer-col ul a:hover{color:#fff}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}.footer-bottom span{font-size:12px;color:rgba(255,255,255,.28)}.footer-bottom a{color:rgba(255,255,255,.38);text-decoration:underline;font-size:12px}.footer-bottom a:hover{color:rgba(255,255,255,.65)}
 @media(max-width:900px){nav.main-nav{display:none}.search-wrap{display:none}.ham-btn{display:flex}.guide-layout{grid-template-columns:1fr}.toc-card,.faq-card,.ad-card,.internal-card{position:static}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.key-points{grid-template-columns:1fr}.bento .span-4,.bento .span-5,.bento .span-6,.bento .span-7,.bento .span-8{grid-column:1/-1}.inline-stats{grid-template-columns:1fr}.hero-guide .container{padding-top:72px;padding-bottom:40px}}
 @media(max-width:600px){.footer-grid{grid-template-columns:1fr;gap:24px}.guide-card{padding:24px}.article-meta{gap:8px}.lede{font-size:17px}}
+
+.table-wrap{overflow:auto;margin-top:18px;border:1px solid var(--border);border-radius:18px}
+.info-table{width:100%;border-collapse:collapse;min-width:760px;background:var(--white)}
+.info-table th,.info-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;font-size:14px}
+.info-table th{background:var(--sand);color:var(--ink);font-weight:700}
+.info-table tr:last-child td{border-bottom:none}
+.mini-note{font-size:13px;color:var(--mute);margin-top:12px}
+.link-list{display:grid;gap:12px;margin-top:16px}
+.link-item{padding:16px 18px;border:1px solid var(--border);border-radius:18px;background:var(--sand)}
+.link-item strong{display:block;color:var(--ink);margin-bottom:4px}
+.cost-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.cost-card{padding:18px;border:1px solid var(--border);border-radius:20px;background:var(--sand)}
+.cost-card h3{margin:0 0 8px;font-size:22px}
+.cost-card .price{display:block;font-size:28px;line-height:1.05;margin-bottom:8px;color:var(--ink)}
+.cost-card ul{margin-top:10px}
+@media(max-width:900px){.cost-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.cost-grid{grid-template-columns:1fr}}
+
 .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style></head>
 <body>
@@ -163,6 +181,332 @@ aside{display:grid;gap:16px;align-content:start}.toc-card,.faq-card,.ad-card,.in
 <article>
 <section class="guide-card"><h2>Overview</h2><p>This page is designed to satisfy informational search intent with clean heading hierarchy, plain-language sections and strong internal linking. That combination improves crawlability, dwell time and contextual ad placement quality while keeping the copy useful to real readers.</p><p>Use this guide as part of a wider content cluster with visa, rent, tax, banking, transport and paperwork pages supporting each other through deliberate internal links.</p></section>
 <section class="guide-card" id="market"><h2>How the rental market works</h2><p>The Portuguese rental market feels simple from the outside, but searchers usually need three distinct answers: what is a realistic budget, how competitive is the market, and what paperwork landlords ask for. A useful guide should answer those directly.</p><p>In larger cities, speed, documentation and upfront payment expectations can influence outcomes as much as budget. Searchers also need a reminder that furnished, unfurnished, short-term and long-term listings behave like separate micro-markets.</p></section><section class="guide-card" id="documents"><h2>Documents landlords and agencies may request</h2><ul><li>Identification and basic contact information.</li><li>Proof of income or employment.</li><li>Tax number and sometimes bank evidence.</li><li>Guarantor details or additional deposit depending on profile.</li><li>Reference letters or prior rental history in more selective listings.</li></ul><p>From an SEO perspective, this section targets high-intent users who are close to action and are likely to engage deeply with the page.</p></section><section class="guide-card" id="contracts"><h2>Understanding lease contracts</h2><h3>Review duration and renewal terms</h3><p>Readers should understand minimum term, renewal logic and notice periods before negotiating price.</p><h3>Check inventory and maintenance clauses</h3><p>Move-in disputes often begin with vague condition reports. A detailed inventory protects both tenant and landlord.</p><h3>Clarify what is included</h3><p>Internet, condominium costs, utilities and municipal charges are not always bundled. A comparison table or summary bullets improve readability and AdSense-friendly user engagement.</p></section><section class="guide-card" id="scams"><h2>Common rental mistakes and scams</h2><ul><li>Sending money before a verified viewing or identity check.</li><li>Assuming a short-term property can automatically convert into a long-term stable address.</li><li>Overlooking licence, registration or building condition issues.</li><li>Ignoring commute, noise and seasonality when choosing location.</li></ul></section><section class="guide-card" id="areas"><h2>How to choose the right area</h2><p>High-performing content segments readers by lifestyle rather than only by city. Single professionals, families, retirees and remote workers do not evaluate neighbourhoods the same way. Structure content around commute, walkability, services, safety, schooling and budget sensitivity.</p></section>
+
+<section class="guide-card" id="neighbourhoods">
+<h2>Best neighbourhoods to live in across 5 major Portuguese cities</h2>
+<p>For most readers, choosing the right city is only step one. The real decision happens at neighbourhood level: commute, noise, walkability, schools, parking, beach access, and the balance between local life and tourism pressure.</p>
+<p>The lists below are practical starting points rather than absolute rankings. They are designed for long-term renters, not short-stay visitors.</p>
+<div class="table-wrap">
+<table class="info-table">
+<thead>
+<tr>
+<th>City</th>
+<th>10 neighbourhoods / areas</th>
+<th>Why people choose them</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lisbon</strong></td>
+<td>Campo de Ourique, Príncipe Real, Avenidas Novas, Alvalade, Estrela, Parque das Nações, Arroios, Belém, Benfica, Graça</td>
+<td>Strong mix of public transport, schools, walkability, cafés, daily services, and clear lifestyle segmentation from premium central living to more residential family districts.</td>
+</tr>
+<tr>
+<td><strong>Porto</strong></td>
+<td>Cedofeita, Boavista, Foz do Douro, Bonfim, Paranhos, Aliados/Bolhão, Lordelo do Ouro, Matosinhos Sul, Campanhã (select pockets), Vila Nova de Gaia riverside</td>
+<td>Good range from central urban districts to beach-adjacent family zones, plus metro access, local commerce, and often better value than prime Lisbon.</td>
+</tr>
+<tr>
+<td><strong>Braga</strong></td>
+<td>Nogueira, Lamaçães, São Victor, Gualtar, São Vicente, Tenões, Maximinos, Real/Dume, Fraião, Palmeira</td>
+<td>Popular with families and professionals looking for lower housing pressure, university access, shopping, schools, and an easier daily rhythm.</td>
+</tr>
+<tr>
+<td><strong>Coimbra</strong></td>
+<td>Celas, Solum, Santo António dos Olivais, Vale das Flores, Santa Clara, Baixa, Alta, Norton de Matos, São Martinho do Bispo, Montes Claros</td>
+<td>Useful spread between academic zones, practical residential areas, quieter family neighbourhoods, and central historic districts.</td>
+</tr>
+<tr>
+<td><strong>Faro</strong></td>
+<td>Cidade Velha, Baixa/Marina, Montenegro, Gambelas, Penha, São Pedro, Bom João, Praia de Faro, Estoi, Conceição de Faro</td>
+<td>Appeal comes from airport access, beach and lagoon proximity, university influence, walkable core areas, and quieter residential pockets outside the tourist strip.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bento">
+<div class="span-6">
+<h4>How to shortlist faster</h4>
+<ul>
+<li>Choose 3 areas based on commute first, not aesthetics.</li>
+<li>Check noise exposure at night and parking reality during weekdays.</li>
+<li>Verify whether the listing is truly in the neighbourhood named in the ad.</li>
+<li>Ask about humidity, sun orientation, lift access, and building age.</li>
+</ul>
+</div>
+<div class="span-6">
+<h4>Simple rule of thumb</h4>
+<ul>
+<li><strong>Families:</strong> prioritise Alvalade, Campo de Ourique, Avenidas Novas, Boavista, Foz, Nogueira, Solum, Montenegro.</li>
+<li><strong>Young professionals:</strong> Príncipe Real, Arroios, Cedofeita, Bonfim, São Victor, Celas, Baixa/Marina.</li>
+<li><strong>Budget-sensitive renters:</strong> Benfica, Paranhos, Maximinos, Santa Clara, Penha, selected Gaia and Campanhã pockets.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="guide-card" id="property-sites">
+<h2>Where to search for rental homes in Portugal</h2>
+<p>Do not rely on a single portal. Good apartments often appear on one site first, then get duplicated elsewhere. Cross-checking saves time and helps you spot fake or stale listings.</p>
+<div class="table-wrap">
+<table class="info-table">
+<thead>
+<tr>
+<th>Website</th>
+<th>Best use</th>
+<th>Website</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Idealista</strong></td>
+<td>Largest mainstream search flow for long-term rentals, maps, alerts, and city-by-city filtering.</td>
+<td><a href="https://www.idealista.pt/en/" rel="noopener noreferrer" target="_blank">idealista.pt</a></td>
+</tr>
+<tr>
+<td><strong>Imovirtual</strong></td>
+<td>Major national property portal with broad rental inventory and agency coverage.</td>
+<td><a href="https://www.imovirtual.com/" rel="noopener noreferrer" target="_blank">imovirtual.com</a></td>
+</tr>
+<tr>
+<td><strong>CASA SAPO</strong></td>
+<td>Large Portuguese portal with wide geographic spread, useful beyond Lisbon and Porto.</td>
+<td><a href="https://casa.sapo.pt/en-gb/" rel="noopener noreferrer" target="_blank">casa.sapo.pt</a></td>
+</tr>
+<tr>
+<td><strong>SUPERCASA</strong></td>
+<td>Useful second-check portal for comparing agency stock and broader national coverage.</td>
+<td><a href="https://supercasa.pt/" rel="noopener noreferrer" target="_blank">supercasa.pt</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warn">
+<strong>Important:</strong> when a deal looks unusually cheap, ask for the exact address, property licence status, landlord identification, and a live or in-person viewing before sending money.
+</div>
+</section>
+
+<section class="guide-card" id="renting-checklist">
+<h2>What to check before renting and which documents to prepare</h2>
+<h3>Before you sign</h3>
+<ul>
+<li>Confirm the monthly rent, deposit, and any request for advance rent in writing.</li>
+<li>Check whether utilities, condominium fees, parking, and internet are included.</li>
+<li>Ask whether the contract will be formally registered and whether rent receipts will be issued.</li>
+<li>Inspect humidity, mould, hot water pressure, appliances, window sealing, and sun exposure.</li>
+<li>Review minimum term, renewal rules, notice periods, inventory list, and repair responsibilities.</li>
+<li>Take move-in photos and attach an inventory annex to the contract.</li>
+</ul>
+
+<h3>Documents tenants are commonly asked to provide</h3>
+<div class="bento">
+<div class="span-4">
+<h4>Employees</h4>
+<ul>
+<li>Passport or EU ID</li>
+<li>NIF</li>
+<li>Employment contract</li>
+<li>Last 3 payslips</li>
+<li>Recent bank statement or IBAN</li>
+<li>Portuguese or foreign tax return when available</li>
+</ul>
+</div>
+<div class="span-4">
+<h4>Freelancers / self-employed</h4>
+<ul>
+<li>Passport or EU ID</li>
+<li>NIF</li>
+<li>Activity registration / company proof</li>
+<li>Recent invoices or contracts</li>
+<li>Last tax return</li>
+<li>Bank statements showing recurring income</li>
+</ul>
+</div>
+<div class="span-4">
+<h4>Retirees</h4>
+<ul>
+<li>Passport or EU ID</li>
+<li>NIF</li>
+<li>Pension statement</li>
+<li>Recent bank statement</li>
+<li>Tax return or annual pension certificate</li>
+<li>Guarantor if requested</li>
+</ul>
+</div>
+<div class="span-12">
+<h4>Extra files that often help</h4>
+<ul>
+<li>Reference letter from prior landlord or employer</li>
+<li>Proof of savings</li>
+<li>Portuguese guarantor (fiador), if available</li>
+<li>Short profile note explaining who will live in the flat and intended lease length</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="guide-card" id="utilities">
+<h2>How to set up water, electricity and gas</h2>
+<p>Utility setup in Portugal is usually straightforward once the lease is signed. In most cases, you need your ID, NIF, address, lease contract or deed, and bank details for direct debit. Electricity and gas are liberalised nationally; water is usually handled by the municipal utility of the city where the property is located.</p>
+
+<h3>Typical setup workflow</h3>
+<ol>
+<li>Ask the landlord or agency for the latest utility bills and supply point codes.</li>
+<li>Choose the electricity or gas supplier you want.</li>
+<li>Submit ID, NIF, address, lease contract, IBAN, and preferred activation date.</li>
+<li>Register for online billing and meter readings where available.</li>
+<li>For water, open the contract with the municipal provider serving that exact address.</li>
+</ol>
+
+<h3>Most commonly used electricity and gas suppliers</h3>
+<div class="table-wrap">
+<table class="info-table">
+<thead>
+<tr>
+<th>Provider</th>
+<th>Service</th>
+<th>Website</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EDP Comercial</strong></td>
+<td>Electricity and dual offers</td>
+<td><a href="https://www.edp.pt/" rel="noopener noreferrer" target="_blank">edp.pt</a></td>
+</tr>
+<tr>
+<td><strong>Endesa</strong></td>
+<td>Electricity and gas</td>
+<td><a href="https://www.endesa.pt/" rel="noopener noreferrer" target="_blank">endesa.pt</a></td>
+</tr>
+<tr>
+<td><strong>Iberdrola</strong></td>
+<td>Electricity and gas</td>
+<td><a href="https://www.iberdrola.pt/" rel="noopener noreferrer" target="_blank">iberdrola.pt</a></td>
+</tr>
+<tr>
+<td><strong>Galp</strong></td>
+<td>Electricity and gas</td>
+<td><a href="https://casa.galp.pt/" rel="noopener noreferrer" target="_blank">casa.galp.pt</a></td>
+</tr>
+<tr>
+<td><strong>Goldenergy</strong></td>
+<td>Electricity and gas</td>
+<td><a href="https://goldenergy.pt/" rel="noopener noreferrer" target="_blank">goldenergy.pt</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Water utilities in the 5 cities covered on this page</h3>
+<div class="table-wrap">
+<table class="info-table">
+<thead>
+<tr>
+<th>City</th>
+<th>Water utility</th>
+<th>Website</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lisbon</td>
+<td>EPAL</td>
+<td><a href="https://www.epal.pt/" rel="noopener noreferrer" target="_blank">epal.pt</a></td>
+</tr>
+<tr>
+<td>Porto</td>
+<td>Águas e Energia do Porto</td>
+<td><a href="https://aguasdoporto.pt/" rel="noopener noreferrer" target="_blank">aguasdoporto.pt</a></td>
+</tr>
+<tr>
+<td>Braga</td>
+<td>AGERE</td>
+<td><a href="https://agere.pt/" rel="noopener noreferrer" target="_blank">agere.pt</a></td>
+</tr>
+<tr>
+<td>Coimbra</td>
+<td>Águas de Coimbra</td>
+<td><a href="https://www.aguasdecoimbra.pt/" rel="noopener noreferrer" target="_blank">aguasdecoimbra.pt</a></td>
+</tr>
+<tr>
+<td>Faro</td>
+<td>FAGAR</td>
+<td><a href="https://fagar.pt/" rel="noopener noreferrer" target="_blank">fagar.pt</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="mini-note">Water is not a fully national shopping comparison like electricity. The correct provider depends on the municipality of the property.</p>
+</section>
+
+<section class="guide-card" id="furnishing">
+<h2>Where to buy furniture and how much it costs to furnish a flat</h2>
+<p>For most renters, the fastest low-friction furnishing path is a mixed basket: IKEA or JYSK for core furniture, hôma for smaller home accessories, Leroy Merlin for lighting and practical setup items, and Conforama when you want additional furniture options or bundled room shopping.</p>
+
+<div class="link-list">
+<div class="link-item"><strong>IKEA</strong><span><a href="https://www.ikea.com/pt/en/" rel="noopener noreferrer" target="_blank">ikea.com/pt/en</a></span></div>
+<div class="link-item"><strong>JYSK</strong><span><a href="https://jysk.pt/" rel="noopener noreferrer" target="_blank">jysk.pt</a></span></div>
+<div class="link-item"><strong>Conforama</strong><span><a href="https://www.conforama.pt/" rel="noopener noreferrer" target="_blank">conforama.pt</a></span></div>
+<div class="link-item"><strong>hôma</strong><span><a href="https://www.homa.pt/" rel="noopener noreferrer" target="_blank">homa.pt</a></span></div>
+<div class="link-item"><strong>Leroy Merlin</strong><span><a href="https://www.leroymerlin.pt/" rel="noopener noreferrer" target="_blank">leroymerlin.pt</a></span></div>
+</div>
+
+<h3>Indicative furnishing budget by apartment size</h3>
+<p>These are practical, non-luxury estimates for a functional setup using entry-level to mid-market items from retailers like IKEA and JYSK. They assume you are buying the basics: bed, mattress, sofa, dining setup, wardrobes or storage, curtains, lamps, and essential kitchen starter items. Appliances are excluded unless the flat is delivered without them.</p>
+
+<div class="cost-grid">
+<div class="cost-card">
+<h3>T0 / Studio</h3>
+<span class="price">€1,800–€3,000</span>
+<ul>
+<li>Bed or sofa-bed</li>
+<li>Mattress</li>
+<li>Small dining table + chairs</li>
+<li>Basic wardrobe / storage</li>
+<li>Curtains, lamps, kitchen starter pack</li>
+</ul>
+</div>
+<div class="cost-card">
+<h3>T1</h3>
+<span class="price">€2,800–€4,500</span>
+<ul>
+<li>1 bedroom fully equipped</li>
+<li>Sofa + coffee table</li>
+<li>Dining set</li>
+<li>TV stand / storage</li>
+<li>Basic office corner optional</li>
+</ul>
+</div>
+<div class="cost-card">
+<h3>T2</h3>
+<span class="price">€4,200–€6,800</span>
+<ul>
+<li>2 bedrooms</li>
+<li>Living room package</li>
+<li>Dining area</li>
+<li>Extra wardrobes / dressers</li>
+<li>More complete kitchen and home accessories</li>
+</ul>
+</div>
+<div class="cost-card">
+<h3>T3</h3>
+<span class="price">€5,800–€9,500</span>
+<ul>
+<li>3 bedrooms</li>
+<li>Full living and dining setup</li>
+<li>Higher quantity of textiles and lighting</li>
+<li>Storage across multiple rooms</li>
+<li>Home office or guest-room flexibility</li>
+</ul>
+</div>
+</div>
+
+<div class="highlight">
+<strong>Budget tip:</strong> if you are trying to reduce upfront move-in cash burn, furnish in layers. Start with bed, mattress, table, chairs, sofa, blackout curtains, and lighting. Add decorative and secondary storage items after month one.
+</div>
+</section>
+
 <section class="guide-card related-guides"><h2>Related Guides</h2><div class="related-grid"><article class="related-item"><h3>Portugal Visa &amp; Residency Guide</h3><p>Match your housing evidence with the residence route you are pursuing.</p><a href="portugal-visa-residency.html">Read guide</a></article><article class="related-item"><h3>Opening a Bank Account in Portugal</h3><p>Useful when landlords or agencies expect local banking capability.</p><a href="banking-in-portugal.html">Read guide</a></article><article class="related-item"><h3>Transport &amp; Public Transit</h3><p>Compare districts by commute, stations and car dependency.</p><a href="transport-in-portugal.html">Read guide</a></article></div></section>
 </article>
 <aside>
